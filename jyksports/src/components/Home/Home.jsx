@@ -10,6 +10,10 @@ const Home = () => {
     navigate('/registro');
   };
 
+  const handleClickButton2 = () => {
+    navigate('/login');
+  };
+
   return (
     <div className="container">
       <header className="container__image">
@@ -21,7 +25,7 @@ const Home = () => {
         <section className="container__buttons">
           <button type="submit" className="container__register" onClick={handleClick}>Registrarse</button>
         </section>
-        <button type="submit" className="container__logIn">Ingresar</button>
+        <button type="submit" className="container__logIn" onClick={handleClickButton2}>Ingresar</button>
       </section>
       <Dog />
     </div>

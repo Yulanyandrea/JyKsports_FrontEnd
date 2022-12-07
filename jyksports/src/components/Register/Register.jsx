@@ -1,32 +1,21 @@
 /* eslint-disable react/prop-types */
 import './style.css';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useForm from '../../hooks/useForm';
+import { createUser } from '../../services/user';
 
 const Register = (props) => {
   const { image } = props;
-  const [form, setForm] = useState({});
+  const { form, handleChange } = useForm({});
   const navigate = useNavigate();
-  const handleChange = ({ target }) => {
-    const { value, name } = target;
-    setForm({ ...form, [name]: value }); // haga una copia y guarde la info
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const payload = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(form),
-    };
 
     try {
-      const res = await fetch('http://localhost:8080/api/users', payload);
-      const data = await res.json();
-      console.log(data);
+      const res = await createUser(form);
+      console.log(res);
       navigate('/');
     } catch (error) {
       console.error(error);
