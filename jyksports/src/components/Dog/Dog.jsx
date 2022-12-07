@@ -1,21 +1,8 @@
-import jyk from '../assets/jyk.jpeg';
 import './style.css';
 
-function Home() {
+const Dog = () => {
   return (
-    <div className="container">
-      <header className="container__image">
-        <img src={jyk} alt="" className="container__jyk" />
-      </header>
-      <h1 className="container__name">JyK Sports</h1>
-      <section className="container__home">
-        <h2 className="container__title">Bienvenido</h2>
-        <section className="container__buttons">
-          <button type="submit" className="container__register">Registrarse</button>
-        </section>
-        <button type="submit" className="container__logIn">Ingresar</button>
-      </section>
-
+    <div>
       <section className="main">
         <div className="dog">
           <div className="dog__paws">
@@ -50,9 +37,7 @@ function Home() {
           </div>
         </div>
       </section>
-
     </div>
-
   );
-}
-export default Home;
+};
+export default Dog;

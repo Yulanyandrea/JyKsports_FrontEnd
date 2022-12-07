@@ -1,13 +1,19 @@
 import './App.css';
-import Home from './components/index';
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/Home/Home';
+import Register from './components/Register/Register';
+import profile from './assets/profile1.jpg';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/registro" element={<Register image={profile} />} />
+      </Routes>
 
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Yulany",
+      "lastname": "Munevar",
+      "email": "andra_852@hotmail.com",
+      "username": "Yula",
+      "password": "1234",
+      "role": "admin"
+    },
+    {
+      "name": "Luna",
+      "lastname": "Munevar",
+      "email": "luna@gmail.com",
+      "username": "Luna",
+      "password": "1234",
+      "roles": "user",
+      "id": 2
+    },
+    {
+      "name": "Jonatan",
+      "lastname": "muñoz",
+      "email": "ljonas@gmail.com",
+      "username": "jonas",
+      "password": "12345",
+      "roles": "admin",
+      "id": 3
+    },
+    {
+      "name": "sandra",
+      "lastname": "perez",
+      "email": "ljonas@gmail.com",
+      "username": "jonas",
+      "password": "12345",
+      "roles": "admin",
+      "id": 4
+    },
+    {
+      "name": "dsadsfd",
+      "lastname": "Munevar",
+      "email": "romeroluzesperanza3@gmail.com",
+      "username": "cdsd",
+      "password": "1234",
+      "roles": "user",
+      "id": 5
+    }
+  ],
+  "companies": [],
+  "size": []
+}
