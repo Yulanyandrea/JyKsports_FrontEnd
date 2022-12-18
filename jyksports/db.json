@@ -55,6 +55,47 @@
       "id": 6
     }
   ],
-  "companies": [],
+  "products": [
+    {
+      "id": "73652728",
+      "reference": "J738Yua",
+      "brand": "Nike",
+      "size": "33",
+      "amount": "100",
+      "image": ""
+    },
+    {
+      "id": "5278328",
+      "reference": "38Yuhgja",
+      "brand": "Addidas",
+      "size": "40",
+      "amount": "30",
+      "image": ""
+    },
+    {
+      "id": "65272008",
+      "reference": "J73",
+      "brand": "Converse",
+      "size": "38",
+      "amount": "100",
+      "image": ""
+    },
+    {
+      "id": "73652728",
+      "reference": "J738Yua",
+      "brand": "Nike",
+      "size": "33",
+      "amount": "100",
+      "image": ""
+    },
+    {
+      "id": "73652728",
+      "reference": "J738Yua",
+      "brand": "Nike",
+      "size": "33",
+      "amount": "100",
+      "image": ""
+    }
+  ],
   "size": []
 }

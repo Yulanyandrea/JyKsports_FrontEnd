@@ -11,7 +11,7 @@ export const createUser = async (user) => {
     body: JSON.stringify(user),
   };
 
-  const res = await fetch(`${BASE_URL}/api/users`, options);
+  const res = await fetch(`${BASE_URL}/users`, options);
   const result = await res.json();
 
   return result;

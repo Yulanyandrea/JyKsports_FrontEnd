@@ -21,7 +21,7 @@ body{
 .container{
   align-items: center;
   font-family: 'Montserrat', sans-serif;
-  background-color:white;
+  background-color: #002c58ca;
   border-radius: 10px;
   max-width: 90%;
   margin: auto;
@@ -32,8 +32,7 @@ body{
 }
 
 .container__image{
-
-
+  padding-top: 31px;
 }
 
 .container__jyk{
@@ -44,13 +43,13 @@ body{
 .container__name{
   font-size: 20px;
   padding: 5px;
-  color:black;
+  color:white;
 }
 
 .container__home{
   display: flex;
   flex-direction: column;
-  color:black;
+  color:white;
   justify-content: center;
   align-items: center;
   padding: 5px;
@@ -74,6 +73,8 @@ body{
   width: 66%;
   border-style: none;
   padding-bottom: 5px;
+  color: white;
+  font-size: 17px;
 }
 
 .container__register:hover{
@@ -86,6 +87,8 @@ body{
   border-style: none;
   width: 91%;
   height: 35px;
+  color: white;
+  font-size: 17px;
 }
 
 .container__logIn:hover{
@@ -93,6 +96,13 @@ body{
 }
 
 @media(min-width:1200px){
+  .container{
+    height: 522px;
+    max-width: 86%;
+    color: white;
+
+  }
+
   .container__jyk{
     width: 57%;
     height: 198px;
@@ -106,6 +116,10 @@ body{
   .container__logIn{
     width: 76%;
     height: 51px;
+  }
+
+  .container__buttons{
+    padding-bottom: 59px;
   }
 }
 

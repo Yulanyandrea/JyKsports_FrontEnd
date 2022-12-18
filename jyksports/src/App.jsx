@@ -1,17 +1,19 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Home from './components/Home/Home';
-import Register from './components/Register/Register';
+import Home from './pages/Home/Home';
+import Register from './pages/Register/Register';
 import profile from './assets/profile1.jpg';
-import LogIn from './components/LogIn/LogIn';
+import LogIn from './pages/LogIn/LogIn';
+import Products from './pages/Products/Products';
 
 const App = () => {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/registro" element={<Register image={profile} />} />
+        <Route path="/register" element={<Register image={profile} />} />
         <Route path="/login" element={<LogIn />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
 
     </div>

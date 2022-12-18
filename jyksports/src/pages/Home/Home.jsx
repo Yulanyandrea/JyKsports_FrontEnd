@@ -1,13 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import jyk from '../../assets/jyk.jpeg';
 import './style.css';
-import Dog from '../Dog/Dog';
+import Dog from '../../components/Dog/Dog';
 
 const Home = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/registro');
+    navigate('/register');
   };
 
   const handleClickButton2 = () => {

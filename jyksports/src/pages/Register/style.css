@@ -10,14 +10,6 @@ html,body{
   height: 100%;
 }
 
-/* body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10%;
-  background-color:#1f66e5;
-} */
-
 .input{
   display: flex;
   flex-direction: column;
@@ -67,6 +59,8 @@ html,body{
 .input__textName{
   width: 109%;
   height: 29px;
+  border-radius: 10px;
+  height: 38px;
 }
 
 .title{
@@ -91,4 +85,11 @@ html,body{
   height: 37px;
   border-radius: 10px;
   border-style: none;
+}
+
+@media(min-width:1200px){
+  .input{
+    margin-top: 100%;
+    margin-bottom: 50%;
+  }
 }
