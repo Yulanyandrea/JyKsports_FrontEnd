@@ -3,6 +3,7 @@ import Product from '../../components/ProductCard/Product';
 import getAllProducts from '../../services/product';
 import './style.css';
 import Header from '../../components/Header/Header';
+import Filter from '../../components/Filter/Filter';
 
 const Products = () => {
   const [product, setProduct] = useState([]);
@@ -20,9 +21,7 @@ const Products = () => {
   return (
     <div className="productsPage">
       <Header />
-      {/* <header className="productPage__container">
-        <h1 className="productsPage__title">Productos almacenados en bodega</h1>
-      </header> */}
+      <Filter />
 
       {
         product.map((products) => {

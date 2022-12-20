@@ -3,8 +3,6 @@
 .headerMenu{
   justify-content: center;
   background-color: #002c58ca;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
   font-family: 'Rubik Vinyl', cursive;
   color:white;
   display: flex;
@@ -60,6 +58,9 @@
     justify-content: space-between;
     height: 51px;
     width: 100%;
+    border-bottom-left-radius: 0;;
+    border-bottom-right-radius: 0;
+
   }
 
   .header__image--icon{

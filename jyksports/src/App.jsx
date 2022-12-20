@@ -6,10 +6,12 @@ import profile from './assets/profile1.jpg';
 import LogIn from './pages/LogIn/LogIn';
 import Products from './pages/Products/Products';
 import Menu from './pages/Menu/Menu';
+// import Filter from './components/Filter/Filter';
 
 const App = () => {
   return (
     <div className="App">
+      {/* <Filter /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
