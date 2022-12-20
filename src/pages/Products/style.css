@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+html,body{
+  height: 100%;
+}
+
+.productsPage{
+  /* padding-top:579%; */
+}
+
+.productsPage__title{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  padding: 10px;
+  padding-bottom: 15px;
+  font-size: 20px;
+}
+
+@media(min-width:1200px){
+  .productsPage{
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-top: 200%; */
+    padding: 0;
+  }
+}

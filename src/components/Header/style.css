@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+
+.headerMenu{
+  justify-content: center;
+  background-color: #002c58ca;
+  font-family: 'Rubik Vinyl', cursive;
+  color:white;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__image{
+  display: flex;
+  justify-content: center;
+}
+
+.header__image--icon{
+  padding-top: 20px;
+  padding-right: 16px;
+}
+
+.headerMenuButton{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.header__button--home{
+  height: 23px;
+  width: 29%;
+  border-radius: 10px;
+  border-style: none;
+  margin-bottom: 5px;
+}
+
+.header__button--home{
+  background-color:#64edbc;
+}
+
+
+.header__button--signOut{
+  height: 23px;
+  width: 170px;
+  border-radius: 10px;
+  border-style: none;
+  margin-bottom: 10px;
+}
+
+.header__button--signOut:hover{
+  background-color:#64edbc;
+}
+
+@media(min-width:1200px){
+  .headerMenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 51px;
+    width: 100%;
+    border-bottom-left-radius: 0;;
+    border-bottom-right-radius: 0;
+
+  }
+
+  .header__image--icon{
+    padding-left: 16px;
+    padding-top: 7px;
+  }
+
+  .headerMenuButton{
+    display: flex;
+    flex-direction: row;
+    padding-right: 17px;
+
+  }
+}

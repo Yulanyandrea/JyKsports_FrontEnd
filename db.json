@@ -1,0 +1,110 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Yulany",
+      "lastname": "Munevar",
+      "email": "andra_852@hotmail.com",
+      "username": "Yula",
+      "password": "1234",
+      "role": "admin"
+    },
+    {
+      "name": "Luna",
+      "lastname": "Munevar",
+      "email": "luna@gmail.com",
+      "username": "Luna",
+      "password": "1234",
+      "roles": "user",
+      "id": 2
+    },
+    {
+      "name": "Jonatan",
+      "lastname": "muñoz",
+      "email": "ljonas@gmail.com",
+      "username": "jonas",
+      "password": "12345",
+      "roles": "admin",
+      "id": 3
+    },
+    {
+      "name": "sandra",
+      "lastname": "perez",
+      "email": "ljonas@gmail.com",
+      "username": "jonas",
+      "password": "12345",
+      "roles": "admin",
+      "id": 4
+    },
+    {
+      "name": "dsadsfd",
+      "lastname": "Munevar",
+      "email": "romeroluzesperanza3@gmail.com",
+      "username": "cdsd",
+      "password": "1234",
+      "roles": "user",
+      "id": 5
+    },
+    {
+      "name": "sara",
+      "lastname": "lopez",
+      "email": "romeroluzesperanza3@gmail.com",
+      "username": "sari",
+      "password": "1234",
+      "roles": "user",
+      "id": 6
+    },
+    {
+      "name": "denver",
+      "lastname": "Munevar",
+      "email": "d@hotmail.com",
+      "username": "den",
+      "password": "12345",
+      "roles": "admin",
+      "id": 7
+    }
+  ],
+  "products": [
+    {
+      "id": "73652728",
+      "reference": "J738Yua",
+      "brand": "Nike",
+      "size": "33",
+      "amount": "100",
+      "image": ""
+    },
+    {
+      "id": "5278328",
+      "reference": "38Yuhgja",
+      "brand": "Addidas",
+      "size": "40",
+      "amount": "30",
+      "image": ""
+    },
+    {
+      "id": "65272008",
+      "reference": "J73",
+      "brand": "Converse",
+      "size": "38",
+      "amount": "100",
+      "image": ""
+    },
+    {
+      "id": "73652728",
+      "reference": "J738Yua",
+      "brand": "Nike",
+      "size": "33",
+      "amount": "100",
+      "image": ""
+    },
+    {
+      "id": "73652728",
+      "reference": "J738Yua",
+      "brand": "Nike",
+      "size": "33",
+      "amount": "100",
+      "image": ""
+    }
+  ],
+  "size": []
+}

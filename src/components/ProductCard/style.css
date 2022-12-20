@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+html,body{
+  height: 100%;
+}
+
+.productContainer{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #002c58ca;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.productContainer__image{
+  display: contents;
+  padding: 20px;
+}
+
+.productContainer__image--img{
+  display: flex;
+  width: 100%;
+  padding: 23px;
+}
+
+.productContainer__description{
+  display: flex;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 17px;
+}
+
+.containerId{
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.text{
+  color: #64edbc;
+}
+
+.containerReference{
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.containerButtons{
+  padding-bottom: 10px;
+}
+
+.containerButtons__button--info{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+}
+
+.containerButtons__buttonUpdate{
+  width: 54%;
+  border-radius:16px;
+  border-style: none;
+  margin-bottom: 10px;
+}
+
+.containerButtons__buttonUpdate:hover{
+  background-color: #64edbc;
+}
+
+.containerButtons__buttonAccept{
+  width: 54%;
+  border-radius:16px;
+  border-style: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.containerButtons__buttonAccept:hover{
+  background-color: #64edbc;
+}
+
+.containerButtons__buttonDelete{
+  width: 54%;
+  border-radius:16px;
+  border-style: none;
+  margin-bottom: 10px;
+}
+
+.containerButtons__buttonDelete:hover{
+  background-color: #64edbc;
+}
+
+@media(min-width:1200px){
+  .productContainer{
+    width: 26%;
+    justify-content: center;
+    margin-left: 6%;
+  }
+
+  .containerBrand{
+    padding-right: 10px;
+  }
+
+  .containerSize{
+    padding-right: 10px;
+  }
+
+
+
+  .containerButtons__buttonUpdate{
+  height: 28px;
+  }
+
+  .containerButtons__buttonAccept{
+  height: 28px;
+
+  }
+
+  .containerButtons__buttonDelete{
+  height: 28px;
+  }
+
+}

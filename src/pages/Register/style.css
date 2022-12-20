@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+html,body{
+  height: 100%;
+}
+
+.input{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #002c58ca;
+  padding: 72px;
+  border-radius: 10px;
+  color:white;
+}
+
+.input__image{
+  border-radius: 178px;
+  width: 50%;
+  height: 114px;
+}
+
+.input__name{
+  display: flex;
+  flex-direction: column;
+}
+
+.input__lastname{
+  display: flex;
+  flex-direction: column;
+}
+
+.input__email{
+  display: flex;
+  flex-direction: column;
+}
+
+.input__username{
+  display: flex;
+  flex-direction: column;
+}
+
+.input__password{
+  display: flex;
+  flex-direction: column;
+}
+
+.input__role{
+  display: flex;
+  flex-direction: column;
+}
+
+.input__textName{
+  width: 109%;
+  height: 29px;
+  border-radius: 10px;
+  height: 38px;
+}
+
+.title{
+  padding: 10px;
+}
+
+.input__role{
+  padding: 22px;
+}
+
+.input__select{
+  width: 170px;
+  height: 29px;
+}
+
+.input__submit{
+  padding: 22px;
+}
+
+.input__button{
+  width: 109%;
+  height: 37px;
+  border-radius: 10px;
+  border-style: none;
+}
+
+@media(min-width:1200px){
+  .input{
+    width: 30%;
+    margin-left: 32%;
+    /* margin-bottom: 50%; */
+  }
+}

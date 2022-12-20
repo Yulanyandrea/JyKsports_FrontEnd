@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+
+.menuFilter{
+  display: flex;
+  justify-content: space-around;
+  background-color:  #002c58ca;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+.menuFilter__brand--text{
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+.menuFilter__size--text{
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+.menuFilter__color--text{
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+@media(min-width:1200px){
+  .menuFilter{
+    height: 31px;
+    width: 100%;
+    padding-top: 10px;
+    margin-top: 0;
+  }
+}

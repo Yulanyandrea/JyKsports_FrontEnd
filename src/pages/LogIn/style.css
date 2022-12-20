@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+html,body{
+  height: 100%;
+}
+
+body{
+  background-image: url('../../../public/images/background.svg');
+}
+
+.container__image--login{
+  display: flex;
+  justify-content: center;
+  padding-top: 57px;
+}
+
+.container__jyk--login{
+  width: 50%;
+  padding: 20px;
+}
+
+.LogInContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  background-color: #002c58ca;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 20px;
+  color: white;
+  margin-top: 30%;
+  margin-left: 0
+}
+
+.LogInContainer__email{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.email{
+  padding-bottom: 10px;
+}
+
+.LogInContainer__email--input{
+  border-radius: 12px;
+  width: 100%;
+  height: 34px;
+  border-style: none;
+}
+
+.LogInContainer__password{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.password{
+  padding-bottom: 10px;
+}
+
+.LogInContainer__textPassword--input{
+  border-radius: 12px;
+  width: 100%;
+  height: 34px;
+  border-style: none;
+}
+
+.LogInContainer__submit{
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  padding-bottom: 39px;
+}
+
+.input__button:hover{
+  background-color: #64edbc;
+}
+
+@media(min-width:1200px){
+  .LogInContainer{
+    width: 27%;
+    margin-left: 34%;
+    margin-top: 2%;
+  }
+}
