@@ -10,25 +10,20 @@ html,body{
   height: 100%;
 }
 
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10%;
-  background-color:white;
-}
-
 .container{
   align-items: center;
   font-family: 'Montserrat', sans-serif;
   background-color: #002c58ca;
   border-radius: 10px;
-  max-width: 90%;
+ width: 280px;
   margin: auto;
-  justify-content: center;
   padding: 20px;
   border-radius: 15px;
   height: 477px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* margin-top: 50%; */
 }
 
 .container__image{
@@ -36,8 +31,8 @@ body{
 }
 
 .container__jyk{
-  height: 179px;
-  width: 66%;
+  height: 160px;
+  width: 100%;
 }
 
 .container__name{
@@ -97,24 +92,24 @@ body{
 
 @media(min-width:1200px){
   .container{
-    height: 522px;
-    max-width: 86%;
+    height: 492px;
+    width: 28%;
     color: white;
 
   }
 
   .container__jyk{
-    width: 57%;
+    width: 100%;
     height: 198px;
   }
 
   .container__register{
-    width: 56%;
+    width: 100%;
     height: 51px;
   }
 
   .container__logIn{
-    width: 76%;
+    width: 141%;
     height: 51px;
   }
 
@@ -124,10 +119,10 @@ body{
 }
 
 @media(max-width:1440){
-  .container__jyk{
+  /* .container__jyk{
     width: 57%;
     height: 230px;
-  }
+  } */
 
 }
 

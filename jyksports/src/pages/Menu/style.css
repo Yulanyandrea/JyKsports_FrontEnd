@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+
+.menuOption{
+  background-color: #002c58ca;
+  position: relative;
+  top: 81px;
+  left: 14px;
+  width: 92%;
+  height: 145px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.menuOption__buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.menuOption__add{
+  width: 50%;
+  height: 23px;
+  border-radius: 10px;
+  border-style: none;
+  margin-bottom: 10px;
+}
+
+.menuOption__add:hover{
+  background-color: #64edbc;
+}
+
+.menuOption__qr{
+  width: 50%;
+  height: 23px;
+  border-radius: 10px;
+  border-style: none;
+  margin-bottom: 10px;
+}
+
+.menuOption__qr:hover{
+  background-color:#64edbc;
+}
+
+.menuOption__list{
+  width: 50%;
+  height: 23px;
+  border-radius: 10px;
+  border-style: none;
+  margin-bottom: 10px;
+}
+
+.menuOption__list:hover{
+  background-color:#64edbc;
+}
+
+@media(min-width:1200px){
+  .menuOption{
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 29%;
+    left: 29%;
+    height: 194px;
+    border-radius: 10px;
+  }
+
+  .menuOption__add{
+    width: 100%;
+  }
+
+  .menuOption__qr{
+    width: 100%;
+  }
+
+  .menuOption__list{
+    width: 112%;
+  }
+
+}
+

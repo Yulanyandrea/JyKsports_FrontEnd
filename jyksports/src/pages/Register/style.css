@@ -89,7 +89,8 @@ html,body{
 
 @media(min-width:1200px){
   .input{
-    margin-top: 100%;
-    margin-bottom: 50%;
+    width: 30%;
+    margin-left: 32%;
+    /* margin-bottom: 50%; */
   }
 }

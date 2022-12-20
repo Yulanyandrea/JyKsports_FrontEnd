@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Product from '../../components/ProductCard/Product';
 import getAllProducts from '../../services/product';
 import './style.css';
+import Header from '../../components/Header/Header';
 
 const Products = () => {
   const [product, setProduct] = useState([]);
@@ -18,6 +19,7 @@ const Products = () => {
   }, []);
   return (
     <div className="productsPage">
+      <Header />
       {/* <header className="productPage__container">
         <h1 className="productsPage__title">Productos almacenados en bodega</h1>
       </header> */}

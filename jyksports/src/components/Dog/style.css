@@ -8,7 +8,7 @@
 .main {
   position: relative;
   width: 37.5vmax;
-  height: 36.5vmax;
+  height:  63.5vmax;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -356,4 +356,10 @@
   80%, 85% {
     transform: translateY(0.15vmax);
   }
+}
+@media(min-width:1200px){
+  .main{
+    height: 23.5vmax;
+  }
+
 }

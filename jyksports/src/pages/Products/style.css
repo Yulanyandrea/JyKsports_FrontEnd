@@ -10,8 +10,8 @@ html,body{
   height: 100%;
 }
 
-/* .productsPage{
-  padding-top: 450%;
+.productsPage{
+  /* padding-top:579%; */
 }
 
 .productsPage__title{
@@ -20,13 +20,13 @@ html,body{
   padding: 10px;
   padding-bottom: 15px;
   font-size: 20px;
-} */
+}
 
 @media(min-width:1200px){
   .productsPage{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 200%;
+    /* margin-top: 200%; */
     padding: 0;
   }
 }

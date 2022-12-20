@@ -99,16 +99,33 @@ html,body{
 
 @media(min-width:1200px){
   .productContainer{
-    width: 50%;
+    width: 26%;
     margin-top: 100px;
+    margin-right: 10px;
+    justify-content: center;
   }
 
-.containerButtons__buttonUpdate{
-  height: 28px;
-}
+  .containerBrand{
+    padding-right: 10px;
+  }
 
-.containerButtons__buttonDelete{
+  .containerSize{
+    padding-right: 10px;
+  }
+
+
+
+  .containerButtons__buttonUpdate{
   height: 28px;
-}
+  }
+
+  .containerButtons__buttonAccept{
+  height: 28px;
+
+  }
+
+  .containerButtons__buttonDelete{
+  height: 28px;
+  }
 
 }

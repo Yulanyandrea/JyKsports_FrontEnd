@@ -16,7 +16,7 @@ const Register = (props) => {
     try {
       const res = await createUser(form);
       console.log(res);
-      navigate('/');
+      navigate('/home');
     } catch (error) {
       console.error(error);
     }

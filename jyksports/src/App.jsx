@@ -5,15 +5,18 @@ import Register from './pages/Register/Register';
 import profile from './assets/profile1.jpg';
 import LogIn from './pages/LogIn/LogIn';
 import Products from './pages/Products/Products';
+import Menu from './pages/Menu/Menu';
 
 const App = () => {
   return (
     <div className="App">
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register image={profile} />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/home" element={<Menu />} />
       </Routes>
 
     </div>
