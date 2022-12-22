@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import Product from '../../components/ProductCard/Product';
-import getAllProducts from '../../services/product';
+import { getAllProducts } from '../../services/product';
 import './style.css';
 import Header from '../../components/Header/Header';
 import Filter from '../../components/Filter/Filter';
 
 const Products = () => {
-  const [product, setProduct] = useState([]);
+  const [container, setContainer] = useState([]);
   useEffect(() => {
     const getData = async () => {
       try {
         const data = await getAllProducts();
-        setProduct(data);
+        setContainer(data);
       } catch (error) {
         console.log(error);
       }
@@ -24,7 +24,7 @@ const Products = () => {
       <Filter />
 
       {
-        product.map((products) => {
+        container.map((products) => {
           return (<Product products={products} />);
         })
       }
