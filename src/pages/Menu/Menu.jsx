@@ -13,12 +13,17 @@ const ejemplo = () => {
     e.preventDefault(e);
     navigate('/generate_qr');
   };
+
+  const handleQrRead = (e) => {
+    e.preventDefault(e);
+    navigate('/readQrCode');
+  };
   return (
     <>
       <Header />
       <section className="menuOption">
         <div className="menuOption__buttons">
-          <button type="submit" className="menuOption__add">Agregar Nuevo producto</button>
+          <button type="submit" className="menuOption__add" onClick={handleQrRead}>Agregar Nuevo producto</button>
           <button type="submit" className="menuOption__qr" onClick={handleSubmitQr}>Generar codigo QR</button>
           <button type="submit" className="menuOption__list" onClick={handleSubmitProduct}>Listar todos los productos</button>
         </div>

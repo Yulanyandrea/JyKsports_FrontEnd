@@ -7,6 +7,7 @@ import LogIn from './pages/LogIn/LogIn';
 import Products from './pages/Products/Products';
 import Menu from './pages/Menu/Menu';
 import QR from './pages/Qr/Qr';
+import QrRead from './components/QrRead/QrRead';
 // import Filter from './components/Filter/Filter';
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/products_DB" element={<Products />} />
         <Route path="/home" element={<Menu />} />
         <Route path="/generate_qr" element={<QR />} />
+        <Route path="/readQrCode" element={<QrRead />} />
       </Routes>
 
     </div>

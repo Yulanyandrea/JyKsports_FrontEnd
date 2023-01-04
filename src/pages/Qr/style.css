@@ -7,4 +7,70 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
+
+.containerQR__reference{
+  display: flex;
+  flex-direction: column;
+  width: 62%;
+}
+
+.containerQR__brand{
+  display: flex;
+  flex-direction: column;
+  width: 62%;
+}
+
+.containerQR__color{
+  display: flex;
+  flex-direction: column;
+  width: 62%;
+}
+
+.containerQR__size{
+  display: flex;
+  flex-direction: column;
+  width: 62%;
+}
+
+.containerQR__amount{
+  display: flex;
+  flex-direction: column;
+  width: 62%;
+}
+
+.containerQR__image{
+  display: flex;
+  flex-direction: column;
+  width: 62%;
+}
+
+.containerQR__input{
+  height: 30px;
+  border-radius: 10px;
+  border-style: none;
+}
+
+.titleqr{
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.containerQR__button{
+  margin-top: 24px;
+  width: 58%;
+  height: 30px;
+  border-radius: 10px;
+  border-style: none;
+}
+
+.containerQR__button:hover{
+  background-color: #64edbc;
+}
+
+.containerQR__component{
+  padding-top: 20px;
+}
+
+
