@@ -1,15 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  value: [],
+  productsData: [],
   status: 'idle',
 };
 
-const counterSlice = createSlice({
+const productsReducer = createSlice({
   name: 'jykstore',
   initialState,
   reducers: {},
 
 });
 
-export default counterSlice.reducer;
+export default productsReducer.reducer;

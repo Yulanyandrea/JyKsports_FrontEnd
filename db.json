@@ -62,6 +62,15 @@
       "password": "12345",
       "roles": "admin",
       "id": 7
+    },
+    {
+      "name": "kelly",
+      "lastname": "arias",
+      "email": "k@hotmail.com",
+      "username": "kmela",
+      "password": "12345",
+      "roles": "admin",
+      "id": 8
     }
   ],
   "products": [
@@ -122,12 +131,20 @@
       "id": "cqiYlcT"
     },
     {
-      "reference": "tylsjd",
-      "brand": "converse",
-      "color": "blanco",
-      "size": "39",
-      "amount": "20",
-      "id": "mynwX-m"
+      "reference": "dsjddhjk",
+      "brand": "Nike",
+      "color": "rosados",
+      "size": "38",
+      "amount": "120",
+      "id": "wQPDa4-"
+    },
+    {
+      "reference": "hdkskoa",
+      "brand": "Nike",
+      "color": "negro",
+      "size": "36",
+      "amount": "60",
+      "id": "wQlSCqs"
     }
   ],
   "size": []

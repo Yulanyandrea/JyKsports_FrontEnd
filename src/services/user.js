@@ -1,6 +1,5 @@
-/* eslint-disable import/prefer-default-export */
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-// const BASE_URL= http://localhost:8080/users
+const BASE_URL_LOG = process.env.REACT_APP_USER_LOGIN;
 
 export const createUser = async (user) => {
   const options = {
@@ -51,4 +50,24 @@ export const deleteUser = async (id) => {
   const res = await fetch(`${BASE_URL}/api/users/${id}`, payload);
   const data = await res.json();
   return data;
+};
+
+export const logInUser = async (userData) => {
+  const payload = {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(userData),
+  };
+  console.log(payload);
+  try {
+    const response = await fetch(BASE_URL_LOG, payload);
+    const userRes = response.json();
+    if (userRes?.token) {
+      localStorage.setItem('token', userRes.token);
+    }
+  } catch (error) {
+    console.error(error);
+  }
 };

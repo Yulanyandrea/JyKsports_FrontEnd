@@ -22,28 +22,20 @@ const QR = () => {
   console.log(data);
 
   const generatePDF = () => {
-    // Defines the pdf
     const pdf = new jsPDF({
       orientation: 'landscape',
       unit: 'mm',
       format: [40, 40],
     });
+    const base64Image = document.getElementById('qrcode').toDataURL();
 
-    // Transforms the canvas into a base64 image
-    const base64Image = document.getElementById('qrcode');
-    console.log(base64Image);
-    const dataURL = base64Image.toDataURL();
-    console.log(dataURL);
-
-    // Adds the image to the pdf
     pdf.addImage(base64Image, 'png', 0, 0, 40, 40);
-
-    // Downloads the pdf
     pdf.save('QR.pdf');
   };
 
   return (
     <div className="containerQR">
+
       <div className="containerQR__reference">
         <label htmlFor="name" className="titleqr">Referencia</label>
         <input type="text" className="containerQR__input" name="reference" onChange={handleChange} placeholder="Ingrese referencia" />
