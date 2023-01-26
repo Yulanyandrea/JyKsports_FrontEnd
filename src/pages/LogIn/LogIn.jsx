@@ -1,25 +1,20 @@
-// import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+/* eslint-disable no-unused-vars */
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getDataUser, logInUser } from '../../features/user/userSlice';
+import useForm from '../../hooks/useForm';
 import './style.css';
 import jyk from '../../assets/jyk.jpeg';
-import logInUser from '../../features/user/userSlice';
 
 const LogIn = () => {
-  // const dispatch = useDispatch();
-  const [logIn, setLogIn] = useState({
-    email: '',
-    password: '',
-  });
+  const { form, handleChange } = useForm({});
+  // const allUsers = useSelector((state) => state.users?.users);
+  const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    logInUser(logIn);
+    // dispatch(logInUser(form));
   };
-
-  const handleChange = ({ target }) => {
-    const key = target.name;
-    setLogIn({ ...logIn, [key]: target.value });
-  };
-  console.log(logIn);
 
   return (
     <form className="LogInContainer">
