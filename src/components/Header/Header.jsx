@@ -9,6 +9,12 @@ const Header = () => {
     e.preventDefault();
     navigate('/home');
   };
+  const handleLogOut = (e) => {
+    e.preventDefault(e);
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    navigate('/');
+  };
   return (
     <div className="headerMenu">
       <header className="header__image">
@@ -17,7 +23,7 @@ const Header = () => {
       </header>
       <div className="headerMenuButton">
         <button type="submit" className="header__button--home" onClick={handleSubmitHome}>Inicio</button>
-        <button type="submit" className="header__button--signOut">Cerrar Sesión</button>
+        <button type="submit" className="header__button--signOut" onClick={handleLogOut}>Cerrar Sesión</button>
 
       </div>
 

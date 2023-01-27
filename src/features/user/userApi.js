@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable consistent-return */
 const API = process.env.REACT_APP_BASE_URL;
-const BASE_URL_LOG = process.env.REACT_APP_USER_LOGIN;
+const APIUSER = process.env.REACT_APP_USER_LOGIN;
 
 export const getDataUsers = async () => {
   const payload = {
@@ -29,14 +29,16 @@ export const logInUser = async (userData) => {
     },
     body: JSON.stringify(userData),
   };
-  console.log(payload);
+
   try {
-    const response = await fetch(BASE_URL_LOG, payload);
-    const userRes = response.json();
-    if (userRes?.token) {
-      localStorage.setItem('token', userRes.token);
+    const response = await fetch(APIUSER, payload);
+    const user = await response.json();
+    if (user?.token) {
+      localStorage.setItem('token', user.token);
     }
+    return user;
   } catch (error) {
     console.error(error);
+    return error;
   }
 };

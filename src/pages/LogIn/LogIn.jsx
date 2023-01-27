@@ -1,19 +1,19 @@
-/* eslint-disable no-unused-vars */
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { getDataUser, logInUser } from '../../features/user/userSlice';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../../features/product/productSlice';
 import useForm from '../../hooks/useForm';
 import './style.css';
 import jyk from '../../assets/jyk.jpeg';
 
 const LogIn = () => {
   const { form, handleChange } = useForm({});
-  // const allUsers = useSelector((state) => state.users?.users);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // dispatch(logInUser(form));
+    dispatch(loginUser(form));
+    navigate('/home');
   };
 
   return (
