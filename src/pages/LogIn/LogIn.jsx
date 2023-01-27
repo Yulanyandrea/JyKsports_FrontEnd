@@ -1,25 +1,20 @@
-// import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../../features/product/productSlice';
+import useForm from '../../hooks/useForm';
 import './style.css';
 import jyk from '../../assets/jyk.jpeg';
-import logInUser from '../../features/user/userSlice';
 
 const LogIn = () => {
-  // const dispatch = useDispatch();
-  const [logIn, setLogIn] = useState({
-    email: '',
-    password: '',
-  });
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    logInUser(logIn);
-  };
+  const { form, handleChange } = useForm({});
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleChange = ({ target }) => {
-    const key = target.name;
-    setLogIn({ ...logIn, [key]: target.value });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    dispatch(loginUser(form));
+    navigate('/home');
   };
-  console.log(logIn);
 
   return (
     <form className="LogInContainer">

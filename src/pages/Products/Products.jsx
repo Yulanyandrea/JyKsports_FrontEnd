@@ -1,31 +1,29 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable import/order */
+// import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Product from '../../components/ProductCard/Product';
-import { getAllProducts } from '../../services/product';
 import './style.css';
 import Header from '../../components/Header/Header';
 import Filter from '../../components/Filter/Filter';
+import { productData } from '../../features/product/productSlice';
+import { useEffect } from 'react';
 
 const Products = () => {
-  const [container, setContainer] = useState([]);
+  // const products = useSelector(selectProduct);
+  const allProducts = useSelector((state) => state.products?.products);
+  const dispatch = useDispatch();
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const data = await getAllProducts();
-        setContainer(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getData();
+    dispatch(productData());
   }, []);
+
   return (
     <div className="productsPage">
       <Header />
       <Filter />
 
       {
-        container.map((products) => {
-          return (<Product products={products} />);
+        allProducts.map((product) => {
+          return (<Product key={product._id} products={product} />);
         })
       }
 

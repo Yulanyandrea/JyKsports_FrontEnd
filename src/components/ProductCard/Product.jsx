@@ -19,7 +19,7 @@ const Product = ({ products }) => {
       <section className="productContainer__description">
         <div className="containerId">
           <p className="productContainer__id--text"> <strong className="text">ID</strong></p>
-          <p className="productContainer__id">{products.id}</p>
+          <p className="productContainer__id">{products._id}</p>
         </div>
 
         <div className="containerReference">

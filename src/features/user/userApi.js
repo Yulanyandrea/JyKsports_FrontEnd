@@ -1,6 +1,9 @@
+/* eslint-disable import/prefer-default-export */
 /* eslint-disable consistent-return */
 const API = process.env.REACT_APP_BASE_URL;
-const getDataUsers = async () => {
+const APIUSER = process.env.REACT_APP_USER_LOGIN;
+
+export const getDataUsers = async () => {
   const payload = {
     method: 'GET',
     headers: {
@@ -18,4 +21,24 @@ const getDataUsers = async () => {
   }
 };
 
-export default getDataUsers;
+export const logInUser = async (userData) => {
+  const payload = {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(userData),
+  };
+
+  try {
+    const response = await fetch(APIUSER, payload);
+    const user = await response.json();
+    if (user?.token) {
+      localStorage.setItem('token', user.token);
+    }
+    return user;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
