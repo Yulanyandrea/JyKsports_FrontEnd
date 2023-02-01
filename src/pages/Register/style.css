@@ -26,6 +26,14 @@ html,body{
   height: 114px;
 }
 
+.input__Selectimage{
+  max-width: 67%;
+  font-size: 16px;
+  overflow: hidden;
+  border-radius: 10px;
+  /* display: none; */
+}
+
 .input__name{
   display: flex;
   flex-direction: column;

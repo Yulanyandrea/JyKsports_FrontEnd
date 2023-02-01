@@ -1,8 +1,6 @@
-/* eslint-disable no-undef */
-/* eslint-disable new-cap */
 import QRCode from 'react-qr-code';
 import { useState } from 'react';
-import { jsPDF } from 'jspdf';
+// import { jsPDF } from 'jspdf';
 import useForm from '../../hooks/useForm';
 import { createProducts } from '../../services/product';
 import './style.css';
@@ -11,26 +9,37 @@ const QR = () => {
   const { form, handleChange } = useForm({});
   const [show, setShow] = useState(false);
   const [data, setData] = useState(' ');
+  // const [image, setImage] = useState(null);
+  // const [img, setImg] = useState(null);
+
+  // const handleChangeImage = ({ target }) => {
+  //   const { files } = target;
+  //   const file = files[0];
+  //   setImage(file);
+  //   console.log('img', image);
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setShow(true);
+    try {
+      const res = await createProducts(form);
+      const format = JSON.stringify(res);
+      setData(format);
+    } catch (error) {
+      console.error(error);
+    }
 
-    const res = await createProducts(form);
-    const format = JSON.stringify(res);
-    setData(format);
-  };
-  console.log(data);
-
-  const generatePDF = () => {
-    const pdf = new jsPDF({
-      orientation: 'landscape',
-      unit: 'mm',
-      format: [40, 40],
-    });
-    const base64Image = document.getElementById('qrcode').toDataURL();
-
-    pdf.addImage(base64Image, 'png', 0, 0, 40, 40);
-    pdf.save('QR.pdf');
+    // const formData = new FormData();
+    // formData.append('file', image);
+    // // conect to back end
+    // const options = {
+    //   method: 'POST',
+    //   body: formData,
+    // };
+    // const response = await fetch(`${url}/upload/file`, options);
+    // const dataImage = response.json();
+    // setImg(dataImage.url);
   };
 
   return (
@@ -62,7 +71,8 @@ const QR = () => {
       </div>
       <div className="containerQR__image">
         <label htmlFor="name" className="titleqr">Imagen</label>
-        <input type="text" className="containerQR__input" name="image" onChange={handleChange} placeholder="Imagen " />
+        <input type="file" className="containerQR__input" name="image" placeholder="Imagen" />
+        {/* {img ? <img src={img} className="input__image" alt="" /> : null } */}
       </div>
       <button type="submit" className="containerQR__button" onClick={handleSubmit}>Crear</button>
       {show && (
@@ -72,7 +82,7 @@ const QR = () => {
           value={data}
           id="qrcode"
         />
-          <button type="submit" onClick={generatePDF}>Download pdf</button>
+          <button type="submit">Download pdf</button>
         </>
       )}
     </div>
