@@ -82,6 +82,16 @@
 }
 
 @media(min-width:1200px){
+
+  .menuOptionTop{
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .menuOptionTop__header--image{
+    width: 5%;
+  }
+
   .menuOption{
     width: 46%;
     display: flex;

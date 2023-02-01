@@ -20,7 +20,7 @@ const Product = ({ products }) => {
   const handleSubmitDelete = async (e) => {
     try {
       const response = await deleteProduct(products._id);
-      console.log(response);
+      dispatch(productData());
     } catch (error) {
       console.error(error);
     }
@@ -77,6 +77,7 @@ const Product = ({ products }) => {
             <input type="brand" className="containerButtons__updateBrand" name="brand" onChange={handleChange} placeholder="Marca" />
             <input type="size" className="containerButtons__updateSize" name="size" onChange={handleChange} placeholder="Talla" />
             <input type="amount" className="containerButtons__updateBrand" name="amount" onChange={handleChange} placeholder="Cantidad en bodega" />
+            <input type="amount" className="containerButtons__updateBrand" name="color" onChange={handleChange} placeholder="Color" />
             <button type="submit" className="containerButtons__buttonAccept" onClick={handleUpdateProduct}>Aceptar</button>
 
           </>

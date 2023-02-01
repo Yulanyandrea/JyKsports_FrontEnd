@@ -1,5 +1,6 @@
 import QRCode from 'react-qr-code';
 import { useState } from 'react';
+import Header from '../../components/Header/Header';
 // import { jsPDF } from 'jspdf';
 import useForm from '../../hooks/useForm';
 import { createProducts } from '../../services/product';
@@ -43,39 +44,41 @@ const QR = () => {
   };
 
   return (
-    <div className="containerQR">
+    <>
+      <Header />
+      <div className="containerQR">
 
-      <div className="containerQR__reference">
-        <label htmlFor="name" className="titleqr">Referencia</label>
-        <input type="text" className="containerQR__input" name="reference" onChange={handleChange} placeholder="Ingrese referencia" />
-      </div>
+        <div className="containerQR__reference">
+          <label htmlFor="name" className="titleqr">Referencia</label>
+          <input type="text" className="containerQR__input" name="reference" onChange={handleChange} placeholder="Ingrese referencia" />
+        </div>
 
-      <div className="containerQR__brand">
-        <label htmlFor="name" className="titleqr">Marca</label>
-        <input type="text" className="containerQR__input" name="brand" onChange={handleChange} placeholder="Ingrese marca" />
-      </div>
+        <div className="containerQR__brand">
+          <label htmlFor="name" className="titleqr">Marca</label>
+          <input type="text" className="containerQR__input" name="brand" onChange={handleChange} placeholder="Ingrese marca" />
+        </div>
 
-      <div className="containerQR__color">
-        <label htmlFor="name" className="titleqr">Color</label>
-        <input type="text" className="containerQR__input" name="color" onChange={handleChange} placeholder="Ingrese color" />
-      </div>
+        <div className="containerQR__color">
+          <label htmlFor="name" className="titleqr">Color</label>
+          <input type="text" className="containerQR__input" name="color" onChange={handleChange} placeholder="Ingrese color" />
+        </div>
 
-      <div className="containerQR__size">
-        <label htmlFor="name" className="titleqr">Talla</label>
-        <input type="text" className="containerQR__input" name="size" onChange={handleChange} placeholder="Ingrese talla" />
-      </div>
+        <div className="containerQR__size">
+          <label htmlFor="name" className="titleqr">Talla</label>
+          <input type="text" className="containerQR__input" name="size" onChange={handleChange} placeholder="Ingrese talla" />
+        </div>
 
-      <div className="containerQR__amount">
-        <label htmlFor="name" className="titleqr">Cantidad en bodega</label>
-        <input type="text" className="containerQR__input" name="amount" onChange={handleChange} placeholder="Ingrese cantidad " />
-      </div>
-      <div className="containerQR__image">
-        <label htmlFor="name" className="titleqr">Imagen</label>
-        <input type="file" className="containerQR__input" name="image" placeholder="Imagen" />
-        {/* {img ? <img src={img} className="input__image" alt="" /> : null } */}
-      </div>
-      <button type="submit" className="containerQR__button" onClick={handleSubmit}>Crear</button>
-      {show && (
+        <div className="containerQR__amount">
+          <label htmlFor="name" className="titleqr">Cantidad en bodega</label>
+          <input type="text" className="containerQR__input" name="amount" onChange={handleChange} placeholder="Ingrese cantidad " />
+        </div>
+        <div className="containerQR__image">
+          <label htmlFor="name" className="titleqr">Imagen</label>
+          <input type="file" className="containerQR__input" name="image" placeholder="Imagen" />
+          {/* {img ? <img src={img} className="input__image" alt="" /> : null } */}
+        </div>
+        <button type="submit" className="containerQR__button" onClick={handleSubmit}>Crear</button>
+        {show && (
         <> <QRCode
           className="containerQR__component"
           size={256}
@@ -84,8 +87,9 @@ const QR = () => {
         />
           <button type="submit">Download pdf</button>
         </>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
 

@@ -74,9 +74,10 @@
 }
 @media(min-width:1200px){
   .containerQR{
-    width: 50%;
+    width: 37%;
     position: absolute;
     left: 29%;
+    border-radius: 10px;
   }
 }
 
