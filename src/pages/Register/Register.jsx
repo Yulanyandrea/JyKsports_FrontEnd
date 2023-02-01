@@ -1,40 +1,63 @@
 /* eslint-disable react/prop-types */
 import './style.css';
-import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import useForm from '../../hooks/useForm';
 import { createUser } from '../../services/user';
 
 const Register = (props) => {
-  const { image } = props;
+  const url = process.env.REACT_APP_BASE_URL;
+
+  const { image1 } = props;
   const { form, handleChange } = useForm({});
-  const navigate = useNavigate();
+  // upload image
+  const [image, setImage] = useState(null);
+  const [img, setImg] = useState(null);
+  // const navigate = useNavigate();
+
+  const handleChangeImage = ({ target }) => {
+    const { files } = target;
+    const file = files[0];
+    setImage(file);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append('file', image);
+    // connect to back end
+    const options = {
+      method: 'POST',
+      body: formData,
+    };
+    const response = await fetch(`${url}/upload/files`, options);
+    const data = response.json();
+    console.log('image', image);
+    setImg(data.url);
 
     try {
       const res = await createUser(form);
       console.log(res);
-      navigate('/home');
     } catch (error) {
       console.error(error);
     }
+    // navigate('/login');
   };
 
   return (
     <form className="input" onSubmit={handleSubmit}>
       <div className="input__profile">
-        <img src={image} alt="" className="input__image" />
+        {img ? <img src={img} className="input__image" alt="" /> : <img src={image1} className="input__image" alt="" /> }
+        <input type="file" className="input__Selectimage" name="profilePicture" onChange={handleChangeImage} />
       </div>
       <div className="input__name">
         <label htmlFor="name" className="title">Nombre</label>
-        <input type="text" className="input__textName" name="name" onChange={handleChange} placeholder="Ingrese nombre" />
+        <input type="text" className="input__textName" name="firstName" onChange={handleChange} placeholder="Ingrese nombre" />
       </div>
 
       <div className="input__lastname">
         <label htmlFor="name" className="title">Apellido</label>
-        <input type="text" className="input__textName" name="lastname" onChange={handleChange} placeholder="Ingrese apellido" />
+        <input type="text" className="input__textName" name="lastName" onChange={handleChange} placeholder="Ingrese apellido" />
       </div>
 
       <div className="input__email">
@@ -44,7 +67,7 @@ const Register = (props) => {
 
       <div className="input__username">
         <label htmlFor="name" className="title">Nombre de usuario</label>
-        <input type="text" className="input__textName" name="username" onChange={handleChange} placeholder="Ingrese usuario" />
+        <input type="text" className="input__textName" name="userName" onChange={handleChange} placeholder="Ingrese usuario" />
       </div>
 
       <div className="input__password">
@@ -68,7 +91,7 @@ const Register = (props) => {
   );
 };
 
-Register.prototype = {
-  image: PropTypes.string.isRequired,
-};
+// Register.prototype = {
+//   image: PropTypes.string.isRequired,
+// };
 export default Register;
