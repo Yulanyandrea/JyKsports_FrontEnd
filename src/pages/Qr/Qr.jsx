@@ -1,6 +1,6 @@
 import QRCode from 'react-qr-code';
-import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import useForm from '../../hooks/useForm';
 import { createProducts } from '../../services/product';
@@ -8,12 +8,15 @@ import './style.css';
 
 const QR = () => {
   const url = process.env.REACT_APP_BASE_URL;
-  // const navigate = useNavigate();
+
+  const navigate = useNavigate();
   const { form, handleChange } = useForm({});
   const [show, setShow] = useState(false);
   const [data, setData] = useState(' ');
   const [image, setImage] = useState(null);
   const [img, setImg] = useState(null);
+
+  const qrCodeRef = useRef(null);
 
   const handleChangeImage = ({ target }) => {
     const { files } = target;
@@ -41,21 +44,32 @@ const QR = () => {
     } catch (error) {
       console.error(error);
     }
-    // navigate('/home');
   };
-  const handleDownload = (e) => {
-    e.preventDefault(e);
-    // download qr
-    const qrCodeURL = document.getElementById('qrcode')
-      .toDataURL('image/png')
-      .replace('image/png', 'image/octet-stream');
-    console.log(qrCodeURL);
-    const aEl = document.createElement('a');
-    aEl.href = qrCodeURL;
-    aEl.download = 'QR_Code.png';
-    document.body.appendChild(aEl);
-    aEl.click();
-    document.body.removeChild(aEl);
+  const handleDownload = async () => {
+    const svg = qrCodeRef.current.childNodes[0];
+    const xml = new XMLSerializer().serializeToString(svg);
+
+    const imag = new Image();
+    imag.src = `data:image/svg+xml;base64,${btoa(xml)}`;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = svg.getAttribute('width');
+    canvas.height = svg.getAttribute('height');
+
+    const context = canvas.getContext('2d');
+    await new Promise((resolve) => {
+      imag.onload = () => {
+        context.drawImage(imag, 0, 0);
+        resolve();
+      };
+    });
+
+    const dataURL = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.download = 'qr-code.png';
+    link.href = dataURL;
+    link.click();
+    navigate('/home');
   };
 
   return (
@@ -94,14 +108,18 @@ const QR = () => {
         </div>
         <button type="submit" className="containerQR__button" onClick={handleSubmit}>Crear</button>
         {show && (
-        <> <QRCode
-          className="containerQR__component"
-          size={256}
-          value={data}
-          id="qrcode"
-        />
-          <button type="submit" onClick={handleDownload}>Download pdf</button>
-        </>
+          <>
+            <div className="canvas" ref={qrCodeRef}>
+              <QRCode
+                className="containerQR__component"
+                size={256}
+                value={data}
+                id="qrcode"
+              />
+            </div>
+            <button type="submit" onClick={handleDownload}>Download pdf</button>
+
+          </>
         )}
       </div>
     </>
