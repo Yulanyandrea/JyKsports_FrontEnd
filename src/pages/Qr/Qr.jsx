@@ -1,46 +1,61 @@
 import QRCode from 'react-qr-code';
 import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
-// import { jsPDF } from 'jspdf';
 import useForm from '../../hooks/useForm';
 import { createProducts } from '../../services/product';
 import './style.css';
 
 const QR = () => {
+  const url = process.env.REACT_APP_BASE_URL;
+  // const navigate = useNavigate();
   const { form, handleChange } = useForm({});
   const [show, setShow] = useState(false);
   const [data, setData] = useState(' ');
-  // const [image, setImage] = useState(null);
-  // const [img, setImg] = useState(null);
+  const [image, setImage] = useState(null);
+  const [img, setImg] = useState(null);
 
-  // const handleChangeImage = ({ target }) => {
-  //   const { files } = target;
-  //   const file = files[0];
-  //   setImage(file);
-  //   console.log('img', image);
-  // };
+  const handleChangeImage = ({ target }) => {
+    const { files } = target;
+    const file = files[0];
+    setImage(file);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setShow(true);
+    const formData = new FormData();
+    formData.append('file', image);
+    // conect to back end
+    const options = {
+      method: 'POST',
+      body: formData,
+    };
+    const response = await fetch(`${url}/upload/file`, options);
+    const dataImage = await response.json();
+    setImg(dataImage.url);
     try {
-      const res = await createProducts(form);
+      const res = await createProducts({ ...form, image: dataImage.url });
       const format = JSON.stringify(res);
       setData(format);
     } catch (error) {
       console.error(error);
     }
-
-    // const formData = new FormData();
-    // formData.append('file', image);
-    // // conect to back end
-    // const options = {
-    //   method: 'POST',
-    //   body: formData,
-    // };
-    // const response = await fetch(`${url}/upload/file`, options);
-    // const dataImage = response.json();
-    // setImg(dataImage.url);
+    // navigate('/home');
+  };
+  const handleDownload = (e) => {
+    e.preventDefault(e);
+    // download qr
+    const qrCodeURL = document.getElementById('qrcode')
+      .toDataURL('image/png')
+      .replace('image/png', 'image/octet-stream');
+    console.log(qrCodeURL);
+    const aEl = document.createElement('a');
+    aEl.href = qrCodeURL;
+    aEl.download = 'QR_Code.png';
+    document.body.appendChild(aEl);
+    aEl.click();
+    document.body.removeChild(aEl);
   };
 
   return (
@@ -74,8 +89,8 @@ const QR = () => {
         </div>
         <div className="containerQR__image">
           <label htmlFor="name" className="titleqr">Imagen</label>
-          <input type="file" className="containerQR__input" name="image" placeholder="Imagen" />
-          {/* {img ? <img src={img} className="input__image" alt="" /> : null } */}
+          <input type="file" className="containerQR__input" name="image" placeholder="Imagen" onChange={handleChangeImage} />
+          {img ? <img src={img} className="containerQR__image--picture" alt="" /> : null }
         </div>
         <button type="submit" className="containerQR__button" onClick={handleSubmit}>Crear</button>
         {show && (
@@ -85,7 +100,7 @@ const QR = () => {
           value={data}
           id="qrcode"
         />
-          <button type="submit">Download pdf</button>
+          <button type="submit" onClick={handleDownload}>Download pdf</button>
         </>
         )}
       </div>

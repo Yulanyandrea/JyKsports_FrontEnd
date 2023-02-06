@@ -1,19 +1,21 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import './style.css';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import useForm from '../../hooks/useForm';
 import { createUser } from '../../services/user';
 
-const Register = (props) => {
+const Register = ({ image1 }) => {
   const url = process.env.REACT_APP_BASE_URL;
 
-  const { image1 } = props;
   const { form, handleChange } = useForm({});
+
   // upload image
   const [image, setImage] = useState(null);
   const [img, setImg] = useState(null);
-  // const navigate = useNavigate();
+
+  const navigate = useNavigate();
 
   const handleChangeImage = ({ target }) => {
     const { files } = target;
@@ -25,23 +27,22 @@ const Register = (props) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append('file', image);
+
     // connect to back end
     const options = {
       method: 'POST',
       body: formData,
     };
-    const response = await fetch(`${url}/upload/files`, options);
-    const data = response.json();
-    console.log('image', image);
+    const response = await fetch(`${url}/upload/file`, options);
+    const data = await response.json();
     setImg(data.url);
 
     try {
-      const res = await createUser(form);
-      console.log(res);
+      const res = await createUser({ ...form, profilePicture: data.url });
     } catch (error) {
       console.error(error);
     }
-    // navigate('/login');
+    navigate('/login');
   };
 
   return (

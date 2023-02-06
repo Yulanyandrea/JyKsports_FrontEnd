@@ -1,11 +1,12 @@
 /* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { getProducts } from './productApi';
+import { getProducts, filterProducts } from './productApi';
 import { getDataUsers, logInUser } from '../user/userApi';
 
 const initialState = {
   products: [],
   users: [],
+  filters: [],
   status: 'idle',
 };
 // GET PRODUCTS
@@ -23,7 +24,12 @@ export const loginUser = createAsyncThunk('users/login', async (data) => {
   const response = await logInUser(data);
   return response;
 });
-
+// FILTER PRODUCT
+export const filterProduct = createAsyncThunk('filter/products', async (data) => {
+  const response = await filterProducts(data);
+  console.log('🚀 ~ file: productSlice.js:30 ~ filterProduct ~ response', response);
+  return response;
+});
 const productsReducer = createSlice({
   name: 'products',
   initialState,
@@ -61,6 +67,16 @@ const productsReducer = createSlice({
         state.users = user;
       })
       .addCase(loginUser.rejected, (state) => {
+        state.status = 'reject';
+      })
+      // filter products
+      .addCase(filterProduct.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(filterProduct.fulfilled, (state, action) => {
+        state.filters = action.payload;
+      })
+      .addCase(filterProduct.rejected, (state) => {
         state.status = 'reject';
       });
   },

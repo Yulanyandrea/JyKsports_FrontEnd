@@ -19,3 +19,9 @@ export const getProducts = async () => {
     console.error(error);
   }
 };
+
+export const filterProducts = async (query) => {
+  const res = await fetch(`${URL}/products/filter?brand=${query.brand}&size=${query.size}&color=${query.color}`);
+  const data = await res.json();
+  return data;
+};
