@@ -16,13 +16,13 @@ export const createUser = async (user) => {
 };
 
 export const getAllUsers = async () => {
-  const res = await fetch(`${BASE_URL}/api/users`);
+  const res = await fetch(`${BASE_URL}/users`);
   const data = await res.json();
   return data;
 };
 
 export const getUserId = async (id) => {
-  const res = await fetch(`${BASE_URL}/api/users/${id}`);
+  const res = await fetch(`${BASE_URL}/users/${id}`);
   const data = await res.json();
   return data;
 };
@@ -37,7 +37,7 @@ export const updateUser = async (user) => {
 
   };
 
-  const response = await fetch(`${BASE_URL}/api/users/${user.id}`, payload);
+  const response = await fetch(`${BASE_URL}/users/${user.id}`, payload);
   const data = await response.json();
   return (data);
 };
@@ -46,7 +46,7 @@ export const deleteUser = async (id) => {
   const payload = {
     method: 'DELETE',
   };
-  const res = await fetch(`${BASE_URL}/api/users/${id}`, payload);
+  const res = await fetch(`${BASE_URL}/users/${id}`, payload);
   const data = await res.json();
   return data;
 };
