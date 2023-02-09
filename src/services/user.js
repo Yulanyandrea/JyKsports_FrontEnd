@@ -28,6 +28,11 @@ export const getUserId = async (id) => {
 };
 
 export const updateUser = async (user) => {
+  const id = JSON.parse(localStorage.getItem('user'));
+  const id2 = id.profile._id;
+  const id3 = id._id;
+  console.log(id);
+  const url = id2 ? `${BASE_URL}/users/${id2}` : `${BASE_URL}/users/${id3._id}`;
   const payload = {
     method: 'PATCH',
     headers: {
@@ -37,7 +42,7 @@ export const updateUser = async (user) => {
 
   };
 
-  const response = await fetch(`${BASE_URL}/users/${user.id}`, payload);
+  const response = await fetch(url, payload);
   const data = await response.json();
   return (data);
 };

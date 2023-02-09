@@ -8,7 +8,7 @@ import Products from './pages/Products/Products';
 import Menu from './pages/Menu/Menu';
 import QR from './pages/Qr/Qr';
 import QrRead from './components/QrRead/QrRead';
-// import Filter from './components/Filter/Filter';
+import EditProfile from './pages/EditProfile/EditProfile';
 
 const App = () => {
   return (
@@ -23,6 +23,7 @@ const App = () => {
         <Route path="/home" element={<Menu />} />
         <Route path="/generate_qr" element={<QR />} />
         <Route path="/readQrCode" element={<QrRead />} />
+        <Route path="/editProfile" element={<EditProfile />} />
       </Routes>
 
     </div>

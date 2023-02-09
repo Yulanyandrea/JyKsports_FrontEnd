@@ -29,7 +29,7 @@ const QR = () => {
     setShow(true);
     const formData = new FormData();
     formData.append('file', image);
-    // conect to back end
+    // connect to back end
     const options = {
       method: 'POST',
       body: formData,
@@ -117,7 +117,7 @@ const QR = () => {
                 id="qrcode"
               />
             </div>
-            <button type="submit" onClick={handleDownload}>Download pdf</button>
+            <button type="submit" className="containerQR__button" onClick={handleDownload}>Download image</button>
 
           </>
         )}

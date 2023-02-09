@@ -1,24 +1,16 @@
-/* eslint-disable no-unused-vars */
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { filterProducts } from '../../features/product/productApi';
+/* eslint-disable react/prop-types */
 import './style.css';
 
-const Filter = () => {
-  const [selectedProduct, setSelectedProduct] = useState({
-    brand: '',
-    size: '',
-    color: '',
-  });
-  // console.log(selectedProduct);
-  const allProducts = useSelector((state) => state.products?.products);
-  useEffect(() => {
-    const filterProduct = async () => {
-      const productApi = await filterProducts(selectedProduct);
-      console.log('product api', productApi);
-    };
-    filterProduct();
-  }, [selectedProduct]);
+const Filter = ({ onFilterChange }) => {
+  const brands = ['Adidas', 'Nike', 'Converse', 'Sneakers', 'Reebok', 'Puma', 'Fila'];
+  const sizes = ['34', '35', '36', '37', '38', '39', '40'];
+  const colors = ['Azul', 'Negro', 'Rosado', 'Verde', 'Aguamarina', 'Amarillo', 'Blanco', 'Rojo'];
+
+  const handelChange = ({ target }) => {
+    const { value, name } = target;
+    onFilterChange({ [name]: value });
+  };
+
   return (
     <div className="menuFilter">
       <section className="menuFilter__brand">
@@ -26,13 +18,11 @@ const Filter = () => {
         <select
           label="name"
           name="brand"
-          onChange={
-            (event) => setSelectedProduct({ ...selectedProduct, brand: event.target.value })
-}
+          onChange={handelChange}
         >
           <option name="null"> </option>
-          {allProducts.map((brand) => {
-            return (<option name="brand" value={brand.brand}>{brand.brand}</option>);
+          {brands.map((brand) => {
+            return (<option key={brand} name="brand" value={brand}>{brand}</option>);
           })}
         </select>
       </section>
@@ -41,13 +31,11 @@ const Filter = () => {
         <select
           label="size"
           name="size"
-          onChange={
-            (event) => setSelectedProduct({ ...selectedProduct, size: event.target.value })
-}
+          onChange={handelChange}
         >
           <option name="null"> </option>
-          {allProducts.map((size) => {
-            return (<option name="size" value={size.size}>{size.size}</option>);
+          {sizes.map((size) => {
+            return (<option name="size" key={size} value={size}>{size}</option>);
           })}
 
         </select>
@@ -57,13 +45,11 @@ const Filter = () => {
         <select
           label="color"
           name="color"
-          onChange={
-            (event) => setSelectedProduct({ ...selectedProduct, color: event.target.value })
-}
+          onChange={handelChange}
         >
           <option name="null"> </option>
-          {allProducts.map((color) => {
-            return (<option name="color" value={color.color}>{color.color}</option>);
+          {colors.map((color) => {
+            return (<option name="color" key={color} value={color}>{color}</option>);
           })}
         </select>
       </section>
