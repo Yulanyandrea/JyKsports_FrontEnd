@@ -1,8 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable consistent-return */
-const URL = process.env.REACT_APP_BASE_URL;
+const BASE = process.env.REACT_APP_BASE_URL;
 
-export const getProducts = async () => {
+export const getProducts = async (filters) => {
   const payload = {
     method: 'GET',
     headers: {
@@ -11,8 +11,11 @@ export const getProducts = async () => {
     body: JSON.stringify(),
 
   };
+  const url = filters
+    ? `${BASE}/products/filter?brand=${filters.brand}&size=${filters.size}&color=${filters.color}`
+    : `${BASE}/products`;
   try {
-    const response = await fetch(`${URL}/products`, payload);
+    const response = await fetch(url, payload);
     const data = response.json();
     return data;
   } catch (error) {
