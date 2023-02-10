@@ -4,7 +4,7 @@ import './style.css';
 const Filter = ({ onFilterChange }) => {
   const brands = ['Adidas', 'Nike', 'Converse', 'Sneakers', 'Reebok', 'Puma', 'Fila'];
   const sizes = ['34', '35', '36', '37', '38', '39', '40'];
-  const colors = ['Azul', 'Negro', 'Rosado', 'Verde', 'Aguamarina', 'Amarillo', 'Blanco', 'Rojo'];
+  const colors = ['Azul', 'Negro', 'Rosado', 'Verde', 'Aguamarina', 'Amarillo', 'Blanco', 'Rojo', 'Naranja'];
 
   const handelChange = ({ target }) => {
     const { value, name } = target;
