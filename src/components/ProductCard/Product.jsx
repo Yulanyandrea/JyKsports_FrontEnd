@@ -29,7 +29,7 @@ const Product = ({ products }) => {
   const handleUpdateProduct = async (e) => {
     try {
       const reponseUp = await updateProduct(products._id, form);
-      dispatch(productData());
+      dispatch(productData(reponseUp));
     } catch (error) {
       console.log(error);
     }

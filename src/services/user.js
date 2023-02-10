@@ -31,7 +31,7 @@ export const updateUser = async (user) => {
   const id = JSON.parse(localStorage.getItem('user'));
   const id2 = id.profile._id;
   const id3 = id._id;
-  console.log(id);
+
   const url = id2 ? `${BASE_URL}/users/${id2}` : `${BASE_URL}/users/${id3._id}`;
   const payload = {
     method: 'PATCH',
