@@ -8,8 +8,6 @@ import './style.css';
 
 const Filter = ({ onFilterChange }) => {
   const dispatch = useDispatch();
-  // const sizes = ['34', '35', '36', '37', '38', '39', '40'];
-  // const colors = ['Azul', 'Negro', 'Rosado', 'Verde', 'Aguamarina', 'Amarillo', 'Blanco', 'Rojo', 'Naranja'];
 
   useEffect(() => {
     dispatch(productDataBase());
