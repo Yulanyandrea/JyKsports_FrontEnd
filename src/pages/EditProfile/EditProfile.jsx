@@ -13,6 +13,7 @@ const EditProfile = () => {
   const dispatch = useDispatch();
   const { form, handleChange } = useForm({});
   const user = useSelector((state) => state.products?.users?.profile);
+  const userData = useSelector((state) => state.products?.users);
 
   const handleSubmit = async (e) => {
     e.preventDefault(e);
@@ -25,7 +26,8 @@ const EditProfile = () => {
       <Header />
       <form action="" className="editProfile__form" onSubmit={handleSubmit}>
         <section className="editProfile__image">
-          <img src={user?.profilePicture} alt="" className="editProfile__image--img" />
+          {user ? <img src={user?.profilePicture} alt="" className="editProfile__image--img" /> : <img src={userData?.profilePicture} alt="" className="editProfile__image--img" /> }
+
         </section>
         <section className="editProfile__info">
           <input type="text" className="editProfile__text" name="userName" placeholder="nombre de usuario" onChange={handleChange} />

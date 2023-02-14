@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable consistent-return */
 const API = process.env.REACT_APP_BASE_URL;
 const APIUSER = process.env.REACT_APP_USER_LOGIN;
