@@ -1,10 +1,27 @@
+/* eslint-disable max-len */
 /* eslint-disable react/prop-types */
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { productDataBase } from '../../features/product/productSlice';
+import { filterArrayProduct } from '../../services/product';
 import './style.css';
 
 const Filter = ({ onFilterChange }) => {
-  const brands = ['Adidas', 'Nike', 'Converse', 'Sneakers', 'Reebok', 'Puma', 'Fila'];
-  const sizes = ['34', '35', '36', '37', '38', '39', '40'];
-  const colors = ['Azul', 'Negro', 'Rosado', 'Verde', 'Aguamarina', 'Amarillo', 'Blanco', 'Rojo', 'Naranja'];
+  const dispatch = useDispatch();
+  // const sizes = ['34', '35', '36', '37', '38', '39', '40'];
+  // const colors = ['Azul', 'Negro', 'Rosado', 'Verde', 'Aguamarina', 'Amarillo', 'Blanco', 'Rojo', 'Naranja'];
+
+  useEffect(() => {
+    dispatch(productDataBase());
+  }, []);
+  const products = useSelector((state) => state.products?.productsDataBase);
+
+  // brands
+  const brands = filterArrayProduct(products, 'brand');
+  // size
+  const sizes = filterArrayProduct(products, 'size');
+  // color
+  const colors = filterArrayProduct(products, 'color');
 
   const handelChange = ({ target }) => {
     const { value, name } = target;

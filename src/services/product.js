@@ -46,3 +46,15 @@ export const deleteProduct = async (id) => {
   const data = await res.json();
   return data;
 };
+
+export const filterArrayProduct = (array, filterProperty) => {
+  const tranformArray = array.reduce((acc, obj) => {
+    const exist = acc.filter((item) => item === obj.brand
+    || item === obj.size || item === obj.color).length;
+    if (!exist) {
+      return [...acc, obj[filterProperty]];
+    }
+    return acc;
+  }, []);
+  return tranformArray;
+};
