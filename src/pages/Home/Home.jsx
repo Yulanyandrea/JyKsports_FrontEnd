@@ -13,7 +13,7 @@ const Home = () => {
   };
 
   const toggleModal = () => {
-    setIsOpen(isOpen);
+    setIsOpen(!isOpen);
     navigate('/register');
   };
 
@@ -34,8 +34,8 @@ const Home = () => {
           {isOpen && (
           <div className="modal">
             <div className="modal-content">
-              <p className="modal__text">Recuerda que cuando te registres en nuestra base de datos, todos los campos son obligatorios</p>
-              <button className="modal__button" type="submit" onClick={toggleModal}>Close</button>
+              <p className="modal__text">Recuerda que cuando te registres, todos los campos son obligatorios</p>
+              <button className="modal__button" type="submit" onClick={toggleModal}>Cerrar</button>
             </div>
           </div>
           )}

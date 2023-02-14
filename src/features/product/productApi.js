@@ -23,8 +23,8 @@ export const getProducts = async (filters) => {
   }
 };
 
-export const filterProducts = async (query) => {
-  const res = await fetch(`${URL}/products/filter?brand=${query.brand}&size=${query.size}&color=${query.color}`);
+export const getAllProducts = async () => {
+  const res = await fetch(`${BASE}/products`);
   const data = await res.json();
   return data;
 };
