@@ -1,4 +1,31 @@
 # JyKsports_FrontEnd
+
+Jyk Sports is a store where people can find and buy shoes for the family . Nowadays, they need help to coordinate all of the information about brands, size colors, or references that arrive at the stores from China. This is a web application made it in React js, Redux Toolkit and some libraries to generate a QR code because the idea in the future is to have the ability to read the QR code and show to the user the informations that it is looking for . 
+
+## Interface:
+
+<a href="url"><img src="https://user-images.githubusercontent.com/79812118/218633543-4208d06b-96fd-4edc-9bc2-456753e6efc6.png" align="left" height="350" width="250" ></a>
+
+This is the principal page of the web app where the user should register with all the requires in order to log in before
+
+<a href="url"><img src="https://user-images.githubusercontent.com/79812118/218634429-b6d5c9e4-91fc-4a0a-bf09-914f3de6e625.png" align="left" height="350" width="250" ></a>
+
+<a href="url"><img src="https://user-images.githubusercontent.com/79812118/218634706-366ae37c-3636-41bc-bc78-1cf7e4cd9fae.png" align="left" height="350" width="250" ></a>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+## Code 
+
 https://www.npmjs.com/package/react-qr-code
 https://codesandbox.io/s/react-y9lo0?file=/src/App.js:412-454
 
