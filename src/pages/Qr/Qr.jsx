@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import QRCode from 'react-qr-code';
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -14,10 +13,15 @@ const QR = () => {
   const navigate = useNavigate();
   const { form, handleChange } = useForm({});
   const [show, setShow] = useState(false);
+  // qr code
   const [data, setData] = useState(' ');
+  // upload image
   const [image, setImage] = useState(null);
   const [img, setImg] = useState(null);
+  // validation
   const [dataError, setDataError] = useState('*Este campo es requerido');
+  const [dataErrorNumber, setDataErrorNumber] = useState('*Este campo es requerido y numerico');
+  // modal
   const [isOpen, setIsOpen] = useState(false);
 
   const handleChangeImage = ({ target }) => {
@@ -27,6 +31,7 @@ const QR = () => {
   };
 
   const handleModal = async (e) => {
+    e.preventDefault();
     setIsOpen(!isOpen);
   };
 
@@ -37,6 +42,7 @@ const QR = () => {
       setIsOpen(!isOpen);
     } else {
       setDataError('');
+      setDataErrorNumber('');
       const formData = new FormData();
       formData.append('file', image);
       // connect to back end
@@ -116,14 +122,14 @@ const QR = () => {
 
         <div className="containerQR__size">
           <label htmlFor="name" className="titleqr">Talla</label>
-          <input type="text" className="containerQR__input" name="size" onChange={handleChange} placeholder="Ingrese talla" />
-          {dataError ? <span className="error">{dataError}</span> : null}
+          <input type="number" className="containerQR__input" name="size" onChange={handleChange} placeholder="Ingrese talla" />
+          {dataErrorNumber ? <span className="error">{dataErrorNumber}</span> : null}
         </div>
 
         <div className="containerQR__amount">
           <label htmlFor="name" className="titleqr">Cantidad en bodega</label>
-          <input type="text" className="containerQR__input" name="amount" onChange={handleChange} placeholder="Ingrese cantidad " />
-          {dataError ? <span className="error">{dataError}</span> : null}
+          <input type="number" className="containerQR__input" name="amount" onChange={handleChange} placeholder="Ingrese cantidad " />
+          {dataErrorNumber ? <span className="error">{dataErrorNumber}</span> : null}
         </div>
         <div className="containerQR__image">
           <label htmlFor="name" className="titleqr">Imagen</label>
