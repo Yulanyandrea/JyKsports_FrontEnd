@@ -32,6 +32,7 @@ export const logInUser = async (userData) => {
   try {
     const response = await fetch(APIUSER, payload);
     const user = await response.json();
+
     if (user?.token) {
       localStorage.setItem('token', user.token);
     }
