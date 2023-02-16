@@ -14,10 +14,14 @@ const QR = () => {
   const navigate = useNavigate();
   const { form, handleChange } = useForm({});
   const [show, setShow] = useState(false);
+  // qr code
   const [data, setData] = useState(' ');
+  // upload image
   const [image, setImage] = useState(null);
   const [img, setImg] = useState(null);
+  // validation
   const [dataError, setDataError] = useState('*Este campo es requerido');
+  // modal
   const [isOpen, setIsOpen] = useState(false);
 
   const handleChangeImage = ({ target }) => {
@@ -27,6 +31,7 @@ const QR = () => {
   };
 
   const handleModal = async (e) => {
+    e.preventDefault();
     setIsOpen(!isOpen);
   };
 
