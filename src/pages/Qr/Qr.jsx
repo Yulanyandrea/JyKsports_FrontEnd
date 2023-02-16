@@ -34,7 +34,6 @@ const QR = () => {
     e.preventDefault();
     setShow(true);
     if (Object.keys(form).length < 5) {
-      setDataError('Este campo es requerido');
       setIsOpen(!isOpen);
     } else {
       setDataError('');
