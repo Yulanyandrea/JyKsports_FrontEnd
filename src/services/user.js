@@ -28,11 +28,11 @@ export const getUserId = async (id) => {
 };
 
 export const updateUser = async (user) => {
-  const id = JSON.parse(localStorage.getItem('user'));
-  const id2 = id.profile._id;
-  const id3 = id._id;
+  const id = JSON.parse(localStorage.getItem('user')).profile._id;
+  const idUpdate = JSON.parse(localStorage.getItem('user'));
+  console.log('local', idUpdate);
 
-  const url = id2 ? `${BASE_URL}/users/${id2}` : `${BASE_URL}/users/${id3._id}`;
+  const url = id ? `${BASE_URL}/users/${id}` : `${BASE_URL}/users/${idUpdate}`;
   const payload = {
     method: 'PATCH',
     headers: {
