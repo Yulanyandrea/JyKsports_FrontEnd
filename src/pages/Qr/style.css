@@ -16,6 +16,14 @@
   width: 62%;
 }
 
+.error{
+  display: flex;
+  color:#009a9a;
+  font-size: 8px;
+  font-weight: 700;
+
+}
+
 .containerQR__brand{
   display: flex;
   flex-direction: column;
