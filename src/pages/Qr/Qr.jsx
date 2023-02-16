@@ -105,29 +105,30 @@ const QR = () => {
         <div className="containerQR__brand">
           <label htmlFor="name" className="titleqr">Marca</label>
           <input type="text" className="containerQR__input" name="brand" onChange={handleChange} placeholder="Ingrese marca" />
-          {dataError && <span className="error">{dataError}</span>}
+          {dataError ? <span className="error">{dataError}</span> : null}
         </div>
 
         <div className="containerQR__color">
           <label htmlFor="name" className="titleqr">Color</label>
           <input type="text" className="containerQR__input" name="color" onChange={handleChange} placeholder="Ingrese color" />
-          {dataError && <span className="error">{dataError}</span>}
+          {dataError ? <span className="error">{dataError}</span> : null}
         </div>
 
         <div className="containerQR__size">
           <label htmlFor="name" className="titleqr">Talla</label>
           <input type="text" className="containerQR__input" name="size" onChange={handleChange} placeholder="Ingrese talla" />
-          {dataError && <span className="error">{dataError}</span>}
+          {dataError ? <span className="error">{dataError}</span> : null}
         </div>
 
         <div className="containerQR__amount">
           <label htmlFor="name" className="titleqr">Cantidad en bodega</label>
           <input type="text" className="containerQR__input" name="amount" onChange={handleChange} placeholder="Ingrese cantidad " />
-          {dataError && <span className="error">{dataError}</span>}
+          {dataError ? <span className="error">{dataError}</span> : null}
         </div>
         <div className="containerQR__image">
           <label htmlFor="name" className="titleqr">Imagen</label>
           <input type="file" className="containerQR__input" name="image" placeholder="Imagen" onChange={handleChangeImage} />
+          {dataError ? <span className="error">{dataError}</span> : null}
           {img ? <img src={img} className="containerQR__image--picture" alt="" /> : null }
         </div>
         <button type="submit" className="containerQR__button" onClick={handleSubmit}>Crear</button>
