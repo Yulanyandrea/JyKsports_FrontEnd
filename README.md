@@ -1,6 +1,10 @@
 # JyKsports_FrontEnd
 
-Jyk Sports is a store where people can find and buy shoes for the family . Nowadays, they need help to coordinate all of the information about brands, size colors, or references that arrive at the stores from China. This is a web application made it in React js, Redux Toolkit and some libraries to generate a QR code because the idea in the future is to have the ability to read the QR code and show to the user the information that it is looking for .
+Jyk Sports is a store where people can find and buy shoes for the family . Nowadays, they need help to coordinate all of the information about brands, size colors, or references that arrive at the stores from China. This is a web application made it in React js, Redux Toolkit and some libraries to generate a QR code because the idea in the future is to have the ability to read the QR code and show to the user the information that it is looking for . 
+
+## Oficial web site :
+
+https://jy-ksports-front-end.vercel.app/
 
 ## Interface
 
