@@ -17,7 +17,11 @@ const Menu = () => {
 
   const handleSubmitQr = (e) => {
     e.preventDefault(e);
-    navigate('/generate_qr');
+    if (username.role === 'ADMIN') {
+      navigate('/generate_qr');
+    } else {
+      navigate('/notAllow');
+    }
   };
 
   const handleQrRead = (e) => {
