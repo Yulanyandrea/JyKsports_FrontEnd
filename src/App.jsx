@@ -9,11 +9,12 @@ import Menu from './pages/Menu/Menu';
 import QR from './pages/Qr/Qr';
 import QrRead from './components/QrRead/QrRead';
 import EditProfile from './pages/EditProfile/EditProfile';
+import NotAllow from './pages/NotAllow/NotAllow';
+import AuthProducts from './components/CreateProductsAuth/AuthProducts';
 
 const App = () => {
   return (
     <div className="App">
-      {/* <Filter /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -24,6 +25,14 @@ const App = () => {
         <Route path="/generate_qr" element={<QR />} />
         <Route path="/readQrCode" element={<QrRead />} />
         <Route path="/editProfile" element={<EditProfile />} />
+        <Route
+          path="/notAllow"
+          element={(
+            <AuthProducts roles="ADMIN">
+              <NotAllow />
+            </AuthProducts>
+          )}
+        />
       </Routes>
 
     </div>
