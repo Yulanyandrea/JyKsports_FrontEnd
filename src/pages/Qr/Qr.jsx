@@ -148,7 +148,7 @@ const QR = () => {
                 id="qrcode"
               />
             </div>
-            <button type="submit" className="containerQR__button" onClick={handleDownload}>Descarga QR</button>
+            <button type="submit" className="containerQR__button" onClick={handleDownload}>Descarga codigo QR</button>
 
           </>
         )}
