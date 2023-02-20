@@ -35,7 +35,7 @@ export const loginUser = createAsyncThunk('users/login', async (data) => {
   return response;
 });
 // UPDATE USER
-export const updateDataUser = createAsyncThunk('users/update', async (data) => {
+export const updateDataUser = createAsyncThunk('currentUser/update', async (data) => {
   const response = await updateUser(data);
   return response;
 });
@@ -100,10 +100,10 @@ const productsReducer = createSlice({
         state.status = 'loading';
       })
       .addCase(updateDataUser.fulfilled, (state, action) => {
-        state.users = 'finish';
+        state.currentUser = 'finish';
         const user = action.payload;
         localStorage.setItem('user', JSON.stringify(user));
-        state.users = user;
+        state.currentUser = user;
       })
       .addCase(updateDataUser.rejected, (state) => {
         state.status = 'reject';

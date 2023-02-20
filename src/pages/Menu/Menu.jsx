@@ -1,14 +1,25 @@
+/* eslint-disable no-unused-vars */
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { currentUser } from '../../features/product/productSlice';
 import Header from '../../components/Header/Header';
 import './style.css';
 
 const Menu = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const username = useSelector((state) => state.products.users?.profile);
-  const username2 = useSelector((state) => state.products.users);
   const userProfileP = useSelector((state) => state.products.users?.profile?.profilePicture);
-  const userProfileData = useSelector((state) => state.products.users.profilePicture);
+  const currentDataUser = useSelector((state) => state.products.currentUser);
+
+  useEffect(() => {
+    if (!currentDataUser) {
+      dispatch(currentUser(username));
+    } else {
+      dispatch(currentUser(currentDataUser));
+    }
+  }, []);
 
   const handleSubmitProduct = (e) => {
     e.preventDefault(e);
@@ -38,12 +49,12 @@ const Menu = () => {
       <Header className="menuOptionTop__header" />
       <section className="menuOptionTop">
 
-        { username ? <><img src={userProfileP} alt="" className="menuOptionTop__header--image" /><h2 className="menuOption__username">Hola {username?.userName}</h2></>
+        { currentDataUser ? <><img src={currentDataUser.profilePicture} alt="" className="menuOptionTop__header--image" /><h2 className="menuOption__username">Hola {currentDataUser?.userName}</h2></>
 
           : (
             <>
-              <img src={userProfileData} alt="" className="menuOptionTop__header--image" />
-              <h2 className="menuOption__username">Hola {username2?.userName}</h2>
+              <img src={userProfileP} alt="" className="menuOptionTop__header--image" />
+              <h2 className="menuOption__username">Hola {username.userName}</h2>
             </>
           )}
       </section>
