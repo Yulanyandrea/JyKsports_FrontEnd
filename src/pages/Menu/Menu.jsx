@@ -14,10 +14,10 @@ const Menu = () => {
   const currentDataUser = useSelector((state) => state.products.currentUser);
 
   useEffect(() => {
-    if (!currentDataUser) {
-      dispatch(currentUser(username));
-    } else {
+    if (currentDataUser) {
       dispatch(currentUser(currentDataUser));
+    } else {
+      dispatch(currentUser(username));
     }
   }, []);
 

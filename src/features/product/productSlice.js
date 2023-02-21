@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getProducts, getAllProducts } from './productApi';
@@ -38,6 +39,10 @@ export const loginUser = createAsyncThunk('users/login', async (data) => {
 export const updateDataUser = createAsyncThunk('currentUser/update', async (data) => {
   const response = await updateUser(data);
   return response;
+});
+// RETURN INITIAL STATE
+export const resetSlice = createAsyncThunk('resetSlice', async () => {
+  return initialState;
 });
 
 const productsReducer = createSlice({
@@ -82,7 +87,7 @@ const productsReducer = createSlice({
       .addCase(getDataUser.rejected, (state) => {
         state.status = 'reject';
       })
-      // log in user
+      // login user
       .addCase(loginUser.pending, (state) => {
         state.status = 'loading';
       })
@@ -107,6 +112,10 @@ const productsReducer = createSlice({
       })
       .addCase(updateDataUser.rejected, (state) => {
         state.status = 'reject';
+      })
+    // delete data redux toolkit
+      .addCase(resetSlice.fulfilled, (state, action) => {
+        return action.payload;
       });
   },
 

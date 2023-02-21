@@ -7,19 +7,36 @@
   margin-top: 20px;
   border-radius: 10px;
   padding: 15px;
+  line-height: 45px;
+}
+
+.editProfile__image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .editProfile__image--img{
-  border-radius: 41px;
-  width: 80%;
-  height: 20%;
-  padding: 3px;
+  border-radius: 90px;
+  height: 79px;
+  width: 30%;
   border-style: groove;
+  margin-bottom: 10px;
+}
+
+.editProfile__image--select{
+  width: 50%;
 }
 
 .editProfile__info{
   display: flex;
   flex-direction: column;
+}
+
+.editProfile__userData{
+  color:#8d8d8d;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
 }
 
 .editProfile__text{
@@ -34,6 +51,7 @@
   height: 28px;
   border-radius: 10px;
   border-style: none;
+  margin-top: 26px;
 }
 
 .editProfile__button:hover{
@@ -45,7 +63,7 @@
     width: 50%;
     align-self: center;
     position: absolute;
-    top: 26%;
+    top: 50%;
     left: 48%;
     transform: translate(-50%, -50%);
   }
