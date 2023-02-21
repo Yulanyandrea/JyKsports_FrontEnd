@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const createUser = async (user) => {
@@ -28,11 +29,8 @@ export const getUserId = async (id) => {
 };
 
 export const updateUser = async (user) => {
-  const id = JSON.parse(localStorage.getItem('user')).profile._id;
-  const idUpdate = JSON.parse(localStorage.getItem('user'));
-  console.log('local', idUpdate);
-
-  const url = id ? `${BASE_URL}/users/${id}` : `${BASE_URL}/users/${idUpdate}`;
+  const idUser = JSON.parse(localStorage.getItem('user')).profile?._id;
+  const idUpdate = JSON.parse(localStorage.getItem('user'))._id;
   const payload = {
     method: 'PATCH',
     headers: {
@@ -41,6 +39,9 @@ export const updateUser = async (user) => {
     body: JSON.stringify(user),
 
   };
+  const url = idUpdate
+    ? `${BASE_URL}/users/${idUpdate}`
+    : `${BASE_URL}/users/${idUser}`;
 
   const response = await fetch(url, payload);
   const data = await response.json();

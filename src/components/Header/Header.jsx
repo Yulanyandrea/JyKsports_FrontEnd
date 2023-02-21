@@ -1,10 +1,13 @@
 import './style.css';
+import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoePrints } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import { resetSlice } from '../../features/product/productSlice';
 
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleSubmitHome = (e) => {
     e.preventDefault();
     navigate('/home');
@@ -13,6 +16,7 @@ const Header = () => {
     e.preventDefault(e);
     localStorage.removeItem('user');
     localStorage.removeItem('token');
+    dispatch(resetSlice());
     navigate('/');
   };
   return (
