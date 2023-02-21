@@ -54,7 +54,7 @@ const EditProfile = () => {
       <Header />
       <form action="" className="editProfile__form" onSubmit={handleSubmit}>
         <section className="editProfile__image">
-          {!img ? <img src={currentDataUser?.profilePicture} alt="" className="editProfile__image--img" /> : <img src={img} alt="" className="" /> }
+          {!img ? <img src={currentDataUser?.profilePicture} alt="" className="editProfile__image--img" /> : <img src={img} alt="" className="editProfile__image--img" /> }
           <input type="file" className="editProfile__image--select" name="profilePicture" onChange={handleChangeImage} />
 
         </section>
