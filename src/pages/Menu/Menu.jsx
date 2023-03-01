@@ -44,6 +44,11 @@ const Menu = () => {
     e.preventDefault(e);
     navigate('/editProfile');
   };
+
+  const handleEmployees = (e) => {
+    e.preventDefault();
+    navigate('/userDataBase');
+  };
   return (
     <>
       <Header className="menuOptionTop__header" />
@@ -64,6 +69,7 @@ const Menu = () => {
           <button type="submit" className="menuOption__qr" onClick={handleSubmitQr}>Agregar productos</button>
           <button type="submit" className="menuOption__list" onClick={handleSubmitProduct}>Listar todos los productos</button>
           <button type="submit" className="menuOption__list" onClick={handleEditProfile}>Editar perfil</button>
+          <button type="submit" className="menuOption__list" onClick={handleEmployees}>Empleados de Jyk Sports</button>
         </div>
 
       </section>
