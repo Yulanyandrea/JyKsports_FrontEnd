@@ -11,6 +11,7 @@ import QrRead from './components/QrRead/QrRead';
 import EditProfile from './pages/EditProfile/EditProfile';
 import NotAllow from './pages/NotAllow/NotAllow';
 import AuthProducts from './components/CreateProductsAuth/AuthProducts';
+import Users from './components/Users/Users';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/generate_qr" element={<QR />} />
         <Route path="/readQrCode" element={<QrRead />} />
         <Route path="/editProfile" element={<EditProfile />} />
+        <Route path="/userDataBase" element={<Users />} />
         <Route
           path="/notAllow"
           element={(
