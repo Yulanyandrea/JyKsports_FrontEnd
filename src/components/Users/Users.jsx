@@ -1,15 +1,22 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { getDataUser } from '../../features/product/productSlice';
 import Header from '../Header/Header';
 import './style.css';
 
 const Users = () => {
   const distpach = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
     distpach(getDataUser());
   }, []);
   const userDataBase = useSelector((state) => state.products.usersDataBase);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    navigate('/userDetails');
+  };
   return (
     <section className="containerUsers">
       <Header />
@@ -28,7 +35,7 @@ const Users = () => {
               <tr>
                 <tr key={user.id} />
                 <td className="containerUsers__table--info">{user.firstName} {user.lastName}</td>
-                <td className="containerUsers__table--buttonCss"><button type="submit" className="containerUsers__table--button">Detalles</button></td>
+                <td className="containerUsers__table--buttonCss"><button type="submit" className="containerUsers__table--button" onClick={handleClick}>Detalles</button></td>
               </tr>
             );
           })}
