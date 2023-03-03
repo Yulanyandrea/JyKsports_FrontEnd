@@ -12,7 +12,8 @@
 
 .containerUsers__table {
   width: 100%;
-  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
 }
 
 .containerUsers__table--head {
@@ -28,10 +29,15 @@
 
 .containerUsers__table--info{
   padding: 11px;
+  background-color: #002c58ca;
+
 }
 
 .containerUsers__table--buttonCss{
   padding: 28px;
+  background-color: #001f3f;
+  display: flex;
+  width: 152px;
 }
 
 .containerUsers__table--button{
@@ -41,6 +47,18 @@
   height: 25px;
 }
 
+.containerUsers__table--button:hover{
+  background-color:#64edbc;
+}
 
+@media(min-width:1200px){
+  .containerUsers__table{
+    align-items: center;
+  }
+
+  .containerUsers__table--head{
+    width: 297px;
+  }
+}
 
 
