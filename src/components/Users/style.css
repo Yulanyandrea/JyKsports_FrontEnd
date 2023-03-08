@@ -51,6 +51,21 @@
   background-color:#64edbc;
 }
 
+.containerUsers__table--buttonEmployee{
+  border-style: none;
+  border-radius: 10px;
+  display: flex;
+  height: 26px;
+  width: 50%;
+  justify-content: center;
+  padding: 5px;
+  margin: 10px;
+}
+
+.containerUsers__table--buttonEmployee:hover{
+  background-color:#64edbc;
+}
+
 @media(min-width:1200px){
   .containerUsers__table{
     align-items: center;
@@ -58,6 +73,17 @@
 
   .containerUsers__table--head{
     width: 297px;
+  }
+
+  .containerUsers__table--btn{
+    display: flex;
+    justify-content: center;
+    width: 86%;
+  }
+
+  .containerUsers__table--buttonEmployee{
+    width: 13%;
+
   }
 }
 

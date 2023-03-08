@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
 
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
 .menuOptionTop__header{
   width: 100%;
 }
@@ -26,6 +30,7 @@
   height: 191px;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
 
 }
 
@@ -41,13 +46,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 10px;
-  padding: 10px;
+  padding: 4px;
 }
 
 .menuOption__add{
   width: 50%;
-  height: 23px;
+  height: 45px;
   border-radius: 10px;
   border-style: none;
   margin-bottom: 10px;
@@ -59,7 +63,7 @@
 
 .menuOption__qr{
   width: 50%;
-  height: 23px;
+  height: 30%;
   border-radius: 10px;
   border-style: none;
   margin-bottom: 10px;
@@ -71,13 +75,82 @@
 
 .menuOption__list{
   width: 50%;
-  height: 23px;
+  height: 30%;
   border-radius: 10px;
   border-style: none;
   margin-bottom: 10px;
 }
 
 .menuOption__list:hover{
+  background-color:#64edbc;
+}
+
+.menuOption__employees{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 102px;
+  background-color: #2e2e6c;
+  left: 14px;
+  width: 92%;
+  height: 142px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+}
+
+.menuOption___buttons--employees{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuOption__buttons-title{
+  color: white;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.menuOption__add--employee{
+  width: 90%;
+  height: 40px;
+  border-radius: 10px;
+  border-style: none;
+  margin-bottom: 10px;
+}
+
+.menuOption__add--employee:hover{
+  background-color:#64edbc;
+}
+
+.menuOption__profile{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 120px;
+  background-color:  #002c58ca;
+  left: 14px;
+  width: 92%;
+  height: 142px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.menuOption__add--profile{
+  width: 40%;
+  height: 40px;
+  border-radius: 10px;
+  border-style: none;
+  margin-bottom: 10px;
+}
+
+.menuOption__add--profile:hover{
   background-color:#64edbc;
 }
 
@@ -115,6 +188,32 @@
 
   .menuOption__list{
     width: 112%;
+  }
+
+  .menuOption__employees{
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 62%;
+    left: 29%;
+    height: 194px;
+    border-radius: 10px;
+  }
+
+  .menuOption__profile{
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 90%;
+    left: 29%;
+    height: 194px;
+    border-radius: 10px;
   }
 
 }
