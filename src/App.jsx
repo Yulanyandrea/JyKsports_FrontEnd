@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/readQrCode" element={<QrRead />} />
         <Route path="/editProfile" element={<EditProfile />} />
         <Route
-          path="/userDataBase"
+          path="/addEmployee"
           element={(
             <UsersAuth roles="ADMIN">
               <NotAllow />
