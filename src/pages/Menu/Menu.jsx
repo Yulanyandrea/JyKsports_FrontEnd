@@ -46,8 +46,13 @@ const Menu = () => {
   };
 
   const handleAddEmployees = (e) => {
+    e.preventDefault(e);
+    navigate('/addEmployees');
+  };
+
+  const handleViewEmployee = (e) => {
     e.preventDefault();
-    navigate('/addEmployee');
+    navigate('/viewEmployee');
   };
   return (
     <>
@@ -76,7 +81,7 @@ const Menu = () => {
         <div className="menuOption___buttons--employees">
           <p className="menuOption__buttons-title">Empleados</p>
           <button type="submit" className="menuOption__add--employee" onClick={handleAddEmployees}>Agregar Empleados a Jyk Sports</button>
-          <button type="submit" className="menuOption__add--employee" onClick={handleAddEmployees}>Empleados de Jyk Sports</button>
+          <button type="submit" className="menuOption__add--employee" onClick={handleViewEmployee}>Empleados de Jyk Sports</button>
 
         </div>
       </section>

@@ -12,6 +12,7 @@ import EditProfile from './pages/EditProfile/EditProfile';
 import NotAllow from './pages/NotAllow/NotAllow';
 import AuthProducts from './components/CreateProductsAuth/AuthProducts';
 import UsersAuth from './components/UsersAuth/UsersAuth';
+import EmployeeAuth from './components/EmployeeAuth/EmployeeAuth';
 
 const App = () => {
   return (
@@ -27,13 +28,23 @@ const App = () => {
         <Route path="/readQrCode" element={<QrRead />} />
         <Route path="/editProfile" element={<EditProfile />} />
         <Route
-          path="/addEmployee"
+          path="/viewEmployee"
           element={(
             <UsersAuth roles="ADMIN">
               <NotAllow />
             </UsersAuth>
           )}
         />
+
+        <Route
+          path="/addEmployees"
+          element={(
+            <EmployeeAuth roles="ADMIN">
+              <NotAllow />
+            </EmployeeAuth>
+          )}
+        />
+
         <Route
           path="/notAllow"
           element={(

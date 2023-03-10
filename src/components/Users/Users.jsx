@@ -42,10 +42,6 @@ const Users = () => {
 
         </tbody>
       </table>
-      <div className="containerUsers__table--btn">
-        <button type="submit" className="containerUsers__table--buttonEmployee">Agregar empleados</button>
-
-      </div>
     </section>
 
   );
