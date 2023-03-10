@@ -4,10 +4,16 @@ import './style.css';
 
 const AddUser = () => {
   const [date, setDate] = useState();
+  const [endDate, setEndDate] = useState();
 
   const handleDate = (e) => {
     e.preventDefault();
     setDate(e.target.value);
+  };
+
+  const handleDateEnd = (e) => {
+    e.preventDefault();
+    setEndDate(e.target.value);
   };
 
   const handlePayment = (e) => {
@@ -31,7 +37,7 @@ const AddUser = () => {
           <input type="date" className="ContainerAddUser__textName" value={date} name="startDate" onChange={handleDate} />
 
           <label htmlFor="name" className="title">Ingrese fecha final</label>
-          <input type="date" className="ContainerAddUser__textName" value={date} name="endDate" onChange={handleDate} />
+          <input type="date" className="ContainerAddUser__textName" value={endDate} name="endDate" onChange={handleDateEnd} />
         </div>
 
         <div className="ContainerAddUser__week">
