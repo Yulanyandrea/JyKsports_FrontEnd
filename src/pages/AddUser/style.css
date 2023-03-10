@@ -49,14 +49,22 @@
 .ContainerAddUser__week--button{
   border-style: none;
   height: 26px;
-  padding: 5px;
+  padding: 10px;
   border-radius: 10px;
   margin-top: 10px;
   background-color: #3d8bda;
   display: flex;
   align-items: center;
+  height: 30px;
 }
 
 .ContainerAddUser__week--button:hover{
   background-color: #64edbc;
+}
+
+@media(min-width:1200px){
+  .ContainerAddUser{
+    width: 33%;
+    left: 30%;
+  }
 }

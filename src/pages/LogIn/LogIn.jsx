@@ -55,8 +55,8 @@ const LogIn = () => {
         )}
       </div>
       <div className="LogInContainer__password">
-        <label htmlFor="name" className="password">Password</label>
-        <input type="password" className="LogInContainer__textPassword--input" name="password" onChange={handleChange} placeholder=" Password" />
+        <label htmlFor="name" className="password">Contraseña</label>
+        <input type="password" className="LogInContainer__textPassword--input" name="password" onChange={handleChange} placeholder="Contraseña" />
         {dataError ? <span className="error">{dataError}</span> : null}
       </div>
       <div className="LogInContainer__submit">
