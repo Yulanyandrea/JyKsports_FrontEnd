@@ -1,10 +1,22 @@
 import { useState } from 'react';
+import useForm from '../../hooks/useForm';
 import Header from '../../components/Header/Header';
 import './style.css';
+import createEmployee from '../../services/employee';
 
 const AddUser = () => {
+  const { form, handleChange } = useForm({});
   const [date, setDate] = useState();
   const [endDate, setEndDate] = useState();
+  const [payment, setPayment] = useState();
+
+  // modal
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleModal = async (e) => {
+    e.preventDefault();
+    setIsOpen(!isOpen);
+  };
 
   const handleDate = (e) => {
     e.preventDefault();
@@ -16,22 +28,32 @@ const AddUser = () => {
     setEndDate(e.target.value);
   };
 
-  const handlePayment = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (Object.keys(form).length < 2) {
+      setIsOpen(!isOpen);
+    } else {
+      try {
+        const response = await createEmployee(form);
+        await setPayment(response.pay);
+      } catch (error) {
+        console.error(error);
+      }
+    }
   };
   return (
     <>
       <Header />
-      <form className="ContainerAddUser">
+      <form className="ContainerAddUser" onSubmit={handleSubmit}>
         <div className="ContainerAddUser__inputs">
           <label htmlFor="name" className="title">Nombre</label>
-          <input type="text" className="ContainerAddUser__textName" name="name" placeholder="Ingrese nombre" />
+          <input type="text" className="ContainerAddUser__textName" name="name" placeholder="Ingrese nombre" onChange={handleChange} />
 
           <label htmlFor="lastName" className="title">Apellido</label>
-          <input type="text" className="ContainerAddUser__textName" name="lastName" placeholder="Ingrese apellido" />
+          <input type="text" className="ContainerAddUser__textName" name="lastName" placeholder="Ingrese apellido" onChange={handleChange} />
 
           <label htmlFor="charge" className="title">Cargo</label>
-          <input type="text" className="ContainerAddUser__textName" name="charge" placeholder="Ingrese cargo" />
+          <input type="text" className="ContainerAddUser__textName" name="role" placeholder="Ingrese cargo" onChange={handleChange} />
 
           <label htmlFor="name" className="title">Ingrese fecha de incio </label>
           <input type="date" className="ContainerAddUser__textName" value={date} name="startDate" onChange={handleDate} />
@@ -42,21 +64,29 @@ const AddUser = () => {
 
         <div className="ContainerAddUser__week">
           <label htmlFor="name" className="title">Lunes</label>
-          <input type="number" className="ContainerAddUser__week--monday" name="workMonday" />
+          <input type="number" className="ContainerAddUser__week--monday" name="dateRate.workMonday" onChange={handleChange} />
           <label htmlFor="name" className="title">Martes</label>
-          <input type="number" className="ContainerAddUser__week--monday" name="workTuesday" />
+          <input type="number" className="ContainerAddUser__week--monday" name="dateRate.workTuesday" onChange={handleChange} />
           <label htmlFor="name" className="title">Miercoles</label>
-          <input type="number" className="ContainerAddUser__week--monday" name="workWednesday" />
+          <input type="number" className="ContainerAddUser__week--monday" name="dateRate.workWednesday" onChange={handleChange} />
           <label htmlFor="name" className="title">Jueves</label>
-          <input type="number" className="ContainerAddUser__week--monday" name="workThursday" />
+          <input type="number" className="ContainerAddUser__week--monday" name="dateRate.workThursday" onChange={handleChange} />
           <label htmlFor="name" className="title">Viernes</label>
-          <input type="number" className="ContainerAddUser__week--monday" name="workFriday" />
+          <input type="number" className="ContainerAddUser__week--monday" name="dateRate.workFriday" onChange={handleChange} />
           <label htmlFor="name" className="title">Sabado</label>
-          <input type="number" className="ContainerAddUser__week--monday" name="workSaturday" />
+          <input type="number" className="ContainerAddUser__week--monday" name="dateRate.workSaturday" onChange={handleChange} />
           <label htmlFor="name" className="title">Domingo</label>
-          <input type="number" className="ContainerAddUser__week--monday" name="workSunday" />
-          <label htmlFor="name" className="title">pago</label>
-          <button type="submit" className="ContainerAddUser__week--button" onClick={handlePayment}>Calcular pago semanal</button>
+          <input type="number" className="ContainerAddUser__week--monday" name="dateRate.workSunday" onChange={handleChange} />
+          <label htmlFor="name" className="title">{'Total pago semanal:  $'}{payment}</label>
+          {isOpen && (
+          <div className="modal">
+            <div className="modal-content">
+              <p className="modal__text">Recuerda que todos los campos son obligatorios</p>
+              <button className="modal__button" type="submit" onClick={handleModal}>Cerrar</button>
+            </div>
+          </div>
+          )}
+          <button type="submit" className="ContainerAddUser__week--button">Calcular pago semanal</button>
 
         </div>
 
