@@ -46,6 +46,11 @@
   height: 25px;
 }
 
+.title--payment{
+  display: flex;
+  line-height: 22px;
+}
+
 .ContainerAddUser__week--button{
   border-style: none;
   height: 26px;

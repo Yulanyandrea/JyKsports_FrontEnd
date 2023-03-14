@@ -6,8 +6,6 @@ import createEmployee from '../../services/employee';
 
 const AddUser = () => {
   const { form, handleChange } = useForm({});
-  const [date, setDate] = useState();
-  const [endDate, setEndDate] = useState();
   const [payment, setPayment] = useState();
 
   // modal
@@ -18,19 +16,9 @@ const AddUser = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleDate = (e) => {
-    e.preventDefault();
-    setDate(e.target.value);
-  };
-
-  const handleDateEnd = (e) => {
-    e.preventDefault();
-    setEndDate(e.target.value);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (Object.keys(form).length < 2) {
+    if (Object.keys(form).length < 10) {
       setIsOpen(!isOpen);
     } else {
       try {
@@ -55,11 +43,6 @@ const AddUser = () => {
           <label htmlFor="charge" className="title">Cargo</label>
           <input type="text" className="ContainerAddUser__textName" name="role" placeholder="Ingrese cargo" onChange={handleChange} />
 
-          <label htmlFor="name" className="title">Ingrese fecha de incio </label>
-          <input type="date" className="ContainerAddUser__textName" value={date} name="startDate" onChange={handleDate} />
-
-          <label htmlFor="name" className="title">Ingrese fecha final</label>
-          <input type="date" className="ContainerAddUser__textName" value={endDate} name="endDate" onChange={handleDateEnd} />
         </div>
 
         <div className="ContainerAddUser__week">
@@ -77,11 +60,11 @@ const AddUser = () => {
           <input type="number" className="ContainerAddUser__week--monday" name="dateRate.workSaturday" onChange={handleChange} />
           <label htmlFor="name" className="title">Domingo</label>
           <input type="number" className="ContainerAddUser__week--monday" name="dateRate.workSunday" onChange={handleChange} />
-          <label htmlFor="name" className="title">{'Total pago semanal:  $'}{payment}</label>
+          <label htmlFor="name" className="title--payment">{'Total pago semanal:  $'}{payment}</label>
           {isOpen && (
           <div className="modal">
             <div className="modal-content">
-              <p className="modal__text">Recuerda que todos los campos son obligatorios</p>
+              <p className="modal__text"> Todos los campos son obligatorios</p>
               <button className="modal__button" type="submit" onClick={handleModal}>Cerrar</button>
             </div>
           </div>
