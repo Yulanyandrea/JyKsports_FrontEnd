@@ -67,6 +67,47 @@
   background-color: #64edbc;
 }
 
+.ContainerAddUser__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #002c58ca;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+  display: flex;
+  line-height: 20px;
+}
+
+.ContainerAddUser__modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+}
+
+.ContainerAddUser__modal--text{
+  color: black;
+  padding: 10px;
+}
+
+.ContainerAddUser__modal--button{
+  width: 50%;
+  height: 37px;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #002c58ca;
+  color:white;
+}
+
+.ContainerAddUser__modal--button:hover{
+  background-color: #64edbc;
+  color: black;
+}
+
 @media(min-width:1200px){
   .ContainerAddUser{
     width: 33%;

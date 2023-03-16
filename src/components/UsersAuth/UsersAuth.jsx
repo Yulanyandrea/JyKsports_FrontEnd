@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useSelector } from 'react-redux';
-import Users from '../Users/Users';
+import Employee from '../Employee/Employee';
 
 const UsersAuth = ({ children, roles }) => {
   const userRole = useSelector((state) => state.products.users?.profile?.role);
   return (
     <section>
-      {userRole === roles ? <Users /> : children }
+      {userRole === roles ? <Employee /> : children }
     </section>
   );
 };
