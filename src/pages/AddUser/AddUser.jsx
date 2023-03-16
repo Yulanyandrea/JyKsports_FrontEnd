@@ -62,10 +62,10 @@ const AddUser = () => {
           <input type="number" className="ContainerAddUser__week--monday" name="dateRate.workSunday" onChange={handleChange} />
           <label htmlFor="name" className="title--payment">{'Total pago semanal:  $'}{payment}</label>
           {isOpen && (
-          <div className="modal">
-            <div className="modal-content">
-              <p className="modal__text"> Todos los campos son obligatorios</p>
-              <button className="modal__button" type="submit" onClick={handleModal}>Cerrar</button>
+          <div className="ContainerAddUser__modal">
+            <div className="ContainerAddUser__modal-content">
+              <p className="ContainerAddUser__modal--text"> Todos los campos son obligatorios</p>
+              <button className="ContainerAddUser__modal--button" type="submit" onClick={handleModal}>Cerrar</button>
             </div>
           </div>
           )}

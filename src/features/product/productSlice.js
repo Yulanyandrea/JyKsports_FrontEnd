@@ -4,6 +4,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getProducts, getAllProducts } from './productApi';
 import { getDataUsers, logInUser } from '../user/userApi';
 import { updateUser } from '../../services/user';
+import { getDataEmployee } from '../employee/employee';
 
 const initialState = {
   products: [],
@@ -25,9 +26,9 @@ export const productData = createAsyncThunk('products/getProducts', async (filte
   const response = await getProducts(filters);
   return response;
 });
-// GET USERS
-export const getDataUser = createAsyncThunk('users/getDataUsers', async () => {
-  const response = await getDataUsers();
+// GET DATA EMPLOYEE
+export const getDataUser = createAsyncThunk('users/getDataEmployee', async () => {
+  const response = await getDataEmployee();
   return response;
 });
 // LOG IN
