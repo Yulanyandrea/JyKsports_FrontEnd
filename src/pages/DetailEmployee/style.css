@@ -1,0 +1,18 @@
+.DetailEmployee{
+  display: flex;
+  flex-direction: column;
+}
+
+.DetailEmployee__section{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.DetailEmployee__name{
+  color:gray
+}
+
+.DetailEmployee__name--text{
+  color:white;
+}
