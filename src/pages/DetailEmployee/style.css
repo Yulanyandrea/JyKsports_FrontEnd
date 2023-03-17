@@ -6,11 +6,17 @@
 .DetailEmployee__section{
   display: flex;
   flex-direction: column;
+  padding: 59px;
+  background-color: #002c58ca;
+  position: relative;
+  top: 56px;
+  font-size: 20px;
 
 }
 
 .DetailEmployee__name{
-  color:gray
+  color:rgb(111, 110, 110);
+  font-weight: 600;
 }
 
 .DetailEmployee__name--text{
