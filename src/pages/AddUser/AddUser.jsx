@@ -60,7 +60,7 @@ const AddUser = () => {
           <input type="number" className="ContainerAddUser__week--monday" name="dateRate.workSaturday" onChange={handleChange} />
           <label htmlFor="name" className="title">Domingo</label>
           <input type="number" className="ContainerAddUser__week--monday" name="dateRate.workSunday" onChange={handleChange} />
-          <label htmlFor="name" className="title--payment">{'Total pago semanal:  $'}{payment}</label>
+          <label htmlFor="name" className="title--payment">{'Salario:  $'}{payment}</label>
           {isOpen && (
           <div className="ContainerAddUser__modal">
             <div className="ContainerAddUser__modal-content">
@@ -69,7 +69,7 @@ const AddUser = () => {
             </div>
           </div>
           )}
-          <button type="submit" className="ContainerAddUser__week--button">Calcular pago semanal</button>
+          <button type="submit" className="ContainerAddUser__week--button">Calcular Salario</button>
 
         </div>
 

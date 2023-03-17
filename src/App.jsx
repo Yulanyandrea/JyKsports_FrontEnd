@@ -13,6 +13,7 @@ import NotAllow from './pages/NotAllow/NotAllow';
 import AuthProducts from './components/CreateProductsAuth/AuthProducts';
 import UsersAuth from './components/UsersAuth/UsersAuth';
 import EmployeeAuth from './components/EmployeeAuth/EmployeeAuth';
+import DetailEmployee from './pages/DetailEmployee/DetailEmployee';
 
 const App = () => {
   return (
@@ -53,6 +54,7 @@ const App = () => {
             </AuthProducts>
           )}
         />
+        <Route path="/employeeDetails/:userId" element={<DetailEmployee />} />
       </Routes>
 
     </div>
