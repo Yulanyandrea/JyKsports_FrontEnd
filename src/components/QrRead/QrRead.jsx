@@ -1,9 +1,10 @@
 import ReactQrReader from 'react-qrcode-reader';
 import { useState } from 'react';
+import Header from '../Header/Header';
 import './style.css';
 
 const QrRead = () => {
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState(' ');
 
   const handleScan = (data) => {
     if (data) {
@@ -11,19 +12,26 @@ const QrRead = () => {
     }
   };
 
+  console.log('holi', result);
+
   const handleError = (error) => {
     console.error(error);
   };
 
   return (
     <div>
-      <ReactQrReader
-        delay={300}
-        onError={handleError}
-        onScan={handleScan}
-        style={{ width: '100%' }}
-      />
-      {result ? <p>{result}</p> : null}
+      <Header />
+      <section className="qrRead">
+        <ReactQrReader
+          delay={300}
+          onError={handleError}
+          onScan={handleScan}
+          style={{ width: '100%' }}
+        />
+
+      </section>
+
+      {result ? <p>{result}</p> : <p>no hay datos para leer</p> }
     </div>
   );
 };

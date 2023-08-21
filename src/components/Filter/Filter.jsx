@@ -16,6 +16,7 @@ const Filter = ({ onFilterChange }) => {
 
   // brands
   const brands = filterArrayProduct(products, 'brand');
+  console.log(brands, 'this is brands');
   // size
   const sizes = filterArrayProduct(products, 'size');
   // color
