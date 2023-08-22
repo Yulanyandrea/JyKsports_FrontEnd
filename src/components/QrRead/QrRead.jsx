@@ -1,29 +1,44 @@
-import ReactQrReader from 'react-qrcode-reader';
-import { useState } from 'react';
+/* eslint-disable no-use-before-define */
+/* eslint-disable import/no-extraneous-dependencies */
+import { Html5QrcodeScanner } from 'html5-qrcode';
+import { useState, useEffect } from 'react';
+import Header from '../Header/Header';
 import './style.css';
 
 const QrRead = () => {
-  const [result, setResult] = useState(null);
+  const [scanResult, setScanResult] = useState(null);
 
-  const handleScan = (data) => {
-    if (data) {
-      setResult(data);
+  useEffect(() => {
+    const scanner = new Html5QrcodeScanner('reader', {
+      qrbox: {
+        width: 250,
+        height: 250,
+        color: 'white',
+      },
+      fps: 5,
+    });
+    scanner.render(success, error);
+
+    function success(result) {
+      scanner.clear();
+      setScanResult(result);
     }
-  };
 
-  const handleError = (error) => {
-    console.error(error);
-  };
-
+    function error(err) {
+      console.warn(err);
+    }
+  }, []);
+  console.log(scanResult);
   return (
     <div>
-      <ReactQrReader
-        delay={300}
-        onError={handleError}
-        onScan={handleScan}
-        style={{ width: '100%' }}
-      />
-      {result ? <p>{result}</p> : null}
+
+      <Header />
+      <section className="qrRead">
+        {
+        scanResult ? <h2>{scanResult}</h2> : <div id="reader" />
+        }
+
+      </section>
     </div>
   );
 };
