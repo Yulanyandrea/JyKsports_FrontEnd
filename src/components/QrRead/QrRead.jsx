@@ -28,16 +28,23 @@ const QrRead = () => {
       console.warn(err);
     }
   }, []);
-  console.log(scanResult);
+  const arrayQr = JSON.parse(scanResult);
+  console.log(arrayQr, 'holi');
   return (
     <div>
 
       <Header />
       <section className="qrRead">
         {
-        scanResult ? <h2>{scanResult}</h2> : <div id="reader" />
+        scanResult ? (
+          <> <img src={arrayQr.image} alt="" className="qrRead__image" />
+            <h2 className="qrRead__text">{'Color : '}{arrayQr.color}</h2>
+            <h2 className="qrRead__text">{'Referencia : '}{arrayQr.reference}</h2>
+            <h2 className="qrRead__text">{'Size: '}{arrayQr.size}</h2>
+            <h2 className="qrRead__text">{'Cantidad en bodega : '}{arrayQr.amount}</h2>
+          </>
+        ) : <div id="reader" />
         }
-
       </section>
     </div>
   );
