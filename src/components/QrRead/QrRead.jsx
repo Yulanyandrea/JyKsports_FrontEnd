@@ -37,12 +37,12 @@ const QrRead = () => {
       <section className="qrRead">
         {
         scanResult ? (
-          <> <img src={arrayQr.image} alt="" className="qrRead__image" />
+          <section className="qrRead__container"> <img src={arrayQr.image} alt="" className="qrRead__image" />
             <h2 className="qrRead__text">{'Color : '}{arrayQr.color}</h2>
             <h2 className="qrRead__text">{'Referencia : '}{arrayQr.reference}</h2>
             <h2 className="qrRead__text">{'Size: '}{arrayQr.size}</h2>
             <h2 className="qrRead__text">{'Cantidad en bodega : '}{arrayQr.amount}</h2>
-          </>
+          </section>
         ) : <div id="reader" />
         }
       </section>
