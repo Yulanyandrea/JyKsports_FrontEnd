@@ -20,3 +20,15 @@
   font-size: 20px;
   font-weight: 200;
 }
+
+@media(min-width:1200px){
+  .qrRead__container{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .qrRead__image{
+    width: 27%;
+  }
+}
