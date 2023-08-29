@@ -1,5 +1,4 @@
 /* eslint-disable no-use-before-define */
-/* eslint-disable import/no-extraneous-dependencies */
 import { Html5QrcodeScanner } from 'html5-qrcode';
 import { useState, useEffect } from 'react';
 import Header from '../Header/Header';
