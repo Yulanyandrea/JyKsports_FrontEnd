@@ -1,17 +1,18 @@
-import { useNavigate } from 'react-router-dom';
-import jyk from '../../assets/jyk.jpeg';
-import './style.css';
-import Dog from '../../components/Dog/Dog';
+/* eslint-disable quotes */
+import { useNavigate } from "react-router-dom";
+import jyk from "../../assets/jyk.jpeg";
+import "./style.css";
+import Dog from "../../components/Dog/Dog";
 
 const Home = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/register');
+    navigate("/register");
   };
 
   const handleClickButton2 = () => {
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
@@ -23,13 +24,24 @@ const Home = () => {
       <section className="container__home">
         <h2 className="container__title">Bienvenido</h2>
         <section className="container__buttons">
-          <button type="submit" className="container__register" onClick={handleClick}>Registrarse</button>
+          <button
+            type="submit"
+            className="container__register"
+            onClick={handleClick}
+          >
+            Registrarse
+          </button>
         </section>
-        <button type="submit" className="container__logIn" onClick={handleClickButton2}>Ingresar</button>
+        <button
+          type="submit"
+          className="container__logIn"
+          onClick={handleClickButton2}
+        >
+          Ingresar
+        </button>
       </section>
       <Dog />
     </div>
-
   );
 };
 export default Home;

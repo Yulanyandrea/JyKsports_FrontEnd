@@ -1,0 +1,14 @@
+.breadCrumb {
+  color: white;
+  font-size: 10px;
+  display: flex;
+  padding-left: 20px;
+}
+
+.breadCrumb__link {
+  color: white;
+}
+
+.algo {
+  color: white;
+}
